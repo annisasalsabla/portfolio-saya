@@ -1,0 +1,140 @@
+[1mdiff --git a/public/images/s9.png b/public/images/s9.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..041e8ab[m
+Binary files /dev/null and b/public/images/s9.png differ
+[1mdiff --git a/src/components/Portfolio.js b/src/components/Portfolio.js[m
+[1mindex 46ff836..3f6280f 100644[m
+[1m--- a/src/components/Portfolio.js[m
+[1m+++ b/src/components/Portfolio.js[m
+[36m@@ -36,6 +36,7 @@[m [mconst projectsData = {[m
+         'Dashboard admin'[m
+       ],[m
+       githubUrl: 'https://github.com/annisasalsabla/PBL6-Arsip',[m
+[32m+[m[32m      demoUrl: 'https://www.mibers23.my.id/PBL/', // TAMBAHAN: URL demo[m
+       liveUrl: '#'[m
+     },[m
+     {[m
+[36m@@ -157,7 +158,8 @@[m [mconst Portfolio = () => {[m
+     { id: 5, image: "/images/s5.png" },[m
+     { id: 6, image: "/images/s6.png" },[m
+     { id: 7, image: "/images/s7.png" },[m
+[31m-    { id: 8, image: "/images/s8.png" }[m
+[32m+[m[32m    { id: 8, image: "/images/s8.png" },[m
+[32m+[m[32m    { id: 9, image: "/images/s9.png" },[m
+   ];[m
+ [m
+   const contactInfo = [[m
+[36m@@ -415,9 +417,23 @@[m [mconst Portfolio = () => {[m
+                           <i className="fas fa-eye me-2"></i>[m
+                           View Details[m
+                         </button>[m
+[32m+[m[41m                        [m
+[32m+[m[32m                        {/* TAMBAHAN: Button Demo di Card untuk SIK PNP */}[m
+[32m+[m[32m                        {project.id === 'sik-pnp' && project.demoUrl && ([m
+[32m+[m[32m                          <a[m[41m [m
+[32m+[m[32m                            href={project.demoUrl}[m
+[32m+[m[32m                            className="btn btn-success mt-2"[m
+[32m+[m[32m                            target="_blank"[m
+[32m+[m[32m                            rel="noopener noreferrer"[m
+[32m+[m[32m                          >[m
+[32m+[m[32m                            <i className="fas fa-external-link-alt me-2"></i>[m
+[32m+[m[32m                            Live Demo[m
+[32m+[m[32m                          </a>[m
+[32m+[m[32m                        )}[m
+[32m+[m[41m                        [m
+                         <a [m
+                           href={project.githubUrl} [m
+[31m-                          className="btn btn-outline-light mt-2"[m
+[32m+[m[32m                          className={`btn ${project.id === 'sik-pnp' ? 'btn-outline-light mt-2' : 'btn-outline-light'}`}[m
+                           target="_blank"[m
+                           rel="noopener noreferrer"[m
+                         >[m
+[36m@@ -645,6 +661,19 @@[m [mconst Portfolio = () => {[m
+                       </div>[m
+ [m
+                       <div className="project-links">[m
+[32m+[m[32m                        {/* TAMBAHAN: Button Demo di Modal untuk SIK PNP */}[m
+[32m+[m[32m                        {selectedProject.id === 'sik-pnp' && selectedProject.demoUrl && ([m
+[32m+[m[32m                          <a[m[41m [m
+[32m+[m[32m                            href={selectedProject.demoUrl}[m
+[32m+[m[32m                            className="btn btn-success w-100 py-2 fw-semibold mb-3"[m
+[32m+[m[32m                            target="_blank"[m
+[32m+[m[32m                            rel="noopener noreferrer"[m
+[32m+[m[32m                          >[m
+[32m+[m[32m                            <i className="fas fa-external-link-alt me-2"></i>[m
+[32m+[m[32m                            Lihat Demo[m
+[32m+[m[32m                          </a>[m
+[32m+[m[32m                        )}[m
+[32m+[m[41m                        [m
+                         <a [m
+                           href={selectedProject.githubUrl} [m
+                           className="btn btn-dark w-100 py-2 fw-semibold"[m
+[36m@@ -1125,6 +1154,68 @@[m [mconst Portfolio = () => {[m
+     }[m
+   }[m
+ [m
+[32m+[m[32m  /* TAMBAHAN: Responsive styles untuk button demo */[m
+[32m+[m[32m  .project-overlay .btn {[m
+[32m+[m[32m    width: 160px;[m
+[32m+[m[32m    font-size: 0.85rem;[m
+[32m+[m[32m    padding: 8px 12px;[m
+[32m+[m[32m    margin: 3px 0;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  .project-overlay .btn-success {[m
+[32m+[m[32m    background-color: #28a745;[m
+[32m+[m[32m    border-color: #28a745;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  .project-overlay .btn-success:hover {[m
+[32m+[m[32m    background-color: #218838;[m
+[32m+[m[32m    border-color: #1e7e34;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  /* Responsive untuk mobile */[m
+[32m+[m[32m  @media (max-width: 768px) {[m
+[32m+[m[32m    .project-overlay .btn {[m
+[32m+[m[32m      width: 140px;[m
+[32m+[m[32m      font-size: 0.75rem;[m
+[32m+[m[32m      padding: 6px 10px;[m
+[32m+[m[32m    }[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  @media (max-width: 576px) {[m
+[32m+[m[32m    .project-overlay .btn {[m
+[32m+[m[32m      width: 120px;[m
+[32m+[m[32m      font-size: 0.7rem;[m
+[32m+[m[32m      padding: 5px 8px;[m
+[32m+[m[32m      margin: 2px 0;[m
+[32m+[m[32m    }[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  @media (max-width: 400px) {[m
+[32m+[m[32m    .project-overlay .btn {[m
+[32m+[m[32m      width: 110px;[m
+[32m+[m[32m      font-size: 0.65rem;[m
+[32m+[m[32m      padding: 4px 6px;[m
+[32m+[m[32m    }[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  /* Modal button responsive */[m
+[32m+[m[32m  .project-info-card .btn {[m
+[32m+[m[32m    font-size: 0.9rem;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  @media (max-width: 768px) {[m
+[32m+[m[32m    .project-info-card .btn {[m
+[32m+[m[32m      font-size: 0.8rem;[m
+[32m+[m[32m    }[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  @media (max-width: 576px) {[m
+[32m+[m[32m    .project-info-card .btn {[m
+[32m+[m[32m      font-size: 0.75rem;[m
+[32m+[m[32m      padding: 8px 12px;[m
+[32m+[m[32m    }[m
+[32m+[m[32m  }[m
+[32m+[m
+   /* Responsive Styles - MOBILE */[m
+   @media (max-width: 768px) {[m
+     /* Semua Section - Nonaktifkan 100vh di mobile */[m

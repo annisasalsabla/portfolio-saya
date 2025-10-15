@@ -36,6 +36,7 @@ const projectsData = {
         'Dashboard admin'
       ],
       githubUrl: 'https://github.com/annisasalsabla/PBL6-Arsip',
+      demoUrl: 'https://www.mibers23.my.id/PBL/', // TAMBAHAN: URL demo
       liveUrl: '#'
     },
     {
@@ -157,7 +158,8 @@ const Portfolio = () => {
     { id: 5, image: "/images/s5.png" },
     { id: 6, image: "/images/s6.png" },
     { id: 7, image: "/images/s7.png" },
-    { id: 8, image: "/images/s8.png" }
+    { id: 8, image: "/images/s8.png" },
+    { id: 9, image: "/images/s9.png" },
   ];
 
   const contactInfo = [
@@ -415,9 +417,23 @@ const Portfolio = () => {
                           <i className="fas fa-eye me-2"></i>
                           View Details
                         </button>
+                        
+                        {/* TAMBAHAN: Button Demo di Card untuk SIK PNP */}
+                        {project.id === 'sik-pnp' && project.demoUrl && (
+                          <a 
+                            href={project.demoUrl}
+                            className="btn btn-success mt-2"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <i className="fas fa-external-link-alt me-2"></i>
+                            Live Demo
+                          </a>
+                        )}
+                        
                         <a 
                           href={project.githubUrl} 
-                          className="btn btn-outline-light mt-2"
+                          className={`btn ${project.id === 'sik-pnp' ? 'btn-outline-light mt-2' : 'btn-outline-light'}`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -645,6 +661,19 @@ const Portfolio = () => {
                       </div>
 
                       <div className="project-links">
+                        {/* TAMBAHAN: Button Demo di Modal untuk SIK PNP */}
+                        {selectedProject.id === 'sik-pnp' && selectedProject.demoUrl && (
+                          <a 
+                            href={selectedProject.demoUrl}
+                            className="btn btn-success w-100 py-2 fw-semibold mb-3"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <i className="fas fa-external-link-alt me-2"></i>
+                            Lihat Demo
+                          </a>
+                        )}
+                        
                         <a 
                           href={selectedProject.githubUrl} 
                           className="btn btn-dark w-100 py-2 fw-semibold"
@@ -1122,6 +1151,68 @@ const Portfolio = () => {
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  /* TAMBAHAN: Responsive styles untuk button demo */
+  .project-overlay .btn {
+    width: 160px;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    margin: 3px 0;
+  }
+
+  .project-overlay .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+
+  .project-overlay .btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+
+  /* Responsive untuk mobile */
+  @media (max-width: 768px) {
+    .project-overlay .btn {
+      width: 140px;
+      font-size: 0.75rem;
+      padding: 6px 10px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .project-overlay .btn {
+      width: 120px;
+      font-size: 0.7rem;
+      padding: 5px 8px;
+      margin: 2px 0;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .project-overlay .btn {
+      width: 110px;
+      font-size: 0.65rem;
+      padding: 4px 6px;
+    }
+  }
+
+  /* Modal button responsive */
+  .project-info-card .btn {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .project-info-card .btn {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .project-info-card .btn {
+      font-size: 0.75rem;
+      padding: 8px 12px;
     }
   }
 
