@@ -38,12 +38,17 @@ const Education = () => {
           viewport={{ once: false, margin: "-100px" }}
         >
           <div className="education-card">
-            <div className="education-icon">
-              <i className="fas fa-graduation-cap"></i>
+            <div className="education-image-container">
+              <img src="/images/pendidikan.jpeg" alt="Pendidikan" loading="lazy" />
             </div>
-            <p className="education-text">
-              Saya adalah lulusan <strong>D3 Program Studi Manajemen Informatika</strong>, Jurusan Teknologi Informasi, <strong>Politeknik Negeri Padang (2023–2026)</strong> dengan <strong>IPK 3.65</strong>. Selama masa studi, saya berfokus pada pengembangan sistem berbasis web dan mobile, serta memperdalam kemampuan programming melalui program magang di <strong>PT Rapier Technology International</strong>.
-            </p>
+            <div className="education-info">
+              <div className="education-icon">
+                <i className="fas fa-graduation-cap"></i>
+              </div>
+              <p className="education-text">
+                Saya adalah lulusan <strong>D3 Program Studi Manajemen Informatika</strong>, Jurusan Teknologi Informasi, <strong>Politeknik Negeri Padang (2023–2026)</strong> dengan <strong>IPK 3.65</strong>. Selama masa studi, saya berfokus pada pengembangan sistem berbasis web dan mobile, serta memperdalam kemampuan programming melalui program magang di <strong>PT Rapier Technology International</strong>.
+              </p>
+            </div>
           </div>
         </motion.div>
 

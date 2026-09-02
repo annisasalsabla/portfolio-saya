@@ -72,7 +72,7 @@ const Navbar = () => {
     >
       <div className="container nav-container">
         <a href="#home" className="nav-logo" onClick={() => setActiveSection('home')}>
-          AS.
+          Portfolio
         </a>
 
         {/* Desktop Menu */}
@@ -110,10 +110,6 @@ const Navbar = () => {
           >
             <i className={theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'}></i>
           </button>
-
-          <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
-            Lihat CV
-          </a>
         </div>
 
         {/* Mobile Toggle & Theme */}
@@ -167,15 +163,6 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <a 
-              href="/cv.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn btn-primary" 
-              style={{ margin: '1rem', display: 'block', textAlign: 'center' }}
-            >
-              Lihat CV
-            </a>
           </motion.div>
         )}
       </AnimatePresence>

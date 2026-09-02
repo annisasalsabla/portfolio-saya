@@ -1,8 +1,22 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import './Experience.css';
 
 const Experience = () => {
+  const [topIndex, setTopIndex] = useState(0);
+  
+  const images = [
+    '/images/magang1.jpeg',
+    '/images/magang2.png',
+    '/images/magang3.png',
+    '/images/magang4.png',
+    '/images/magang5.png'
+  ];
+
+  const handleNextImage = () => {
+    setTopIndex((prev) => (prev + 1) % images.length);
+  };
+
   const itemVariants = {
     hidden: { opacity: 0, x: -30 },
     visible: { 
@@ -43,6 +57,41 @@ const Experience = () => {
               <p className="timeline-desc">
                 Menjalani Praktik Kerja Lapangan (PKL) sebagai Intern Backend Developer di divisi Development. Bertanggung jawab dalam pengembangan REST API untuk Sistem Informasi POS-HALOEMAS, mencakup perancangan endpoint, integrasi data, dan optimasi alur komunikasi antara backend dan frontend. Berkolaborasi dengan tim developer, business analyst, dan QA dalam siklus pengembangan software berbasis kebutuhan klien.
               </p>
+              
+              <div className="experience-gallery" onClick={handleNextImage} title="Klik untuk gambar selanjutnya">
+                <AnimatePresence mode="popLayout">
+                  {images.map((img, index) => {
+                    // Calculate offset relative to topIndex
+                    const offset = (index - topIndex + images.length) % images.length;
+                    
+                    // We only show top 3 images to prevent clutter
+                    if (offset > 2) return null;
+                    
+                    return (
+                      <motion.div
+                        key={img}
+                        className="gallery-image-wrapper"
+                        initial={{ opacity: 0, scale: 0.8, x: 50 }}
+                        animate={{ 
+                          opacity: 1 - (offset * 0.2), 
+                          scale: 1 - (offset * 0.05),
+                          x: offset * 15,
+                          y: offset * 15,
+                          zIndex: images.length - offset
+                        }}
+                        exit={{ opacity: 0, scale: 0.8, x: -50 }}
+                        transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+                        whileHover={offset === 0 ? { scale: 1.02 } : {}}
+                      >
+                        <img src={img} alt={`Magang ${index + 1}`} loading="lazy" />
+                      </motion.div>
+                    );
+                  })}
+                </AnimatePresence>
+                <div className="gallery-hint">
+                  <i className="fas fa-hand-pointer"></i> Klik gambar
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

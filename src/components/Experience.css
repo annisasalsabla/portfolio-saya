@@ -83,10 +83,55 @@
 .timeline-desc {
   font-size: 1rem;
   line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+
+/* Experience Gallery */
+.experience-gallery {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 280px;
+  margin-top: var(--space-4);
+  cursor: pointer;
+}
+
+.gallery-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 4px solid var(--bg-surface);
+  background-color: var(--bg-color);
+  transform-origin: top left;
+}
+
+.gallery-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none; /* Prevent dragging */
+}
+
+.gallery-hint {
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
 }
 
 @media (max-width: 640px) {
   .timeline-header {
     flex-direction: column;
+  }
+  
+  .experience-gallery {
+    height: 200px;
   }
 }
