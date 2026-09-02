@@ -95,23 +95,25 @@
   transform: translateY(-2px);
 }
 
-/* Image & Blob Area */
-.hero-image-container {
+/* Image & Glow Area */
+.hero-image {
   position: relative;
   display: flex;
-  justify-content: flex-end; 
+  justify-content: center; 
   align-items: center;
   width: 100%;
+  max-width: 450px;
+  margin-left: auto;
   z-index: 1;
 }
 
-/* Massive glowing orbs behind the image */
-.hero-blob {
+/* Massive glowing background behind the image */
+.hero-glow {
   position: absolute;
-  width: 120%;
-  height: 120%;
-  right: -10%;
-  top: -10%;
+  width: 130%;
+  height: 130%;
+  right: -15%;
+  top: -15%;
   z-index: -1;
   display: flex;
   align-items: center;
@@ -122,7 +124,7 @@
 .blob-svg {
   width: 100%;
   height: auto;
-  max-width: 500px;
+  max-width: 550px;
   position: absolute;
   z-index: 2;
   overflow: visible;
@@ -132,71 +134,71 @@
   fill: #ffffff;
   stroke: none;
   transition: all var(--transition-normal);
-  filter: drop-shadow(0px 10px 30px rgba(0,0,0,0.05));
+  filter: drop-shadow(0px 10px 40px rgba(0,0,0,0.08));
 }
 
 [data-theme="dark"] .blob-path {
-  fill: rgba(15, 23, 42, 0.4);
+  fill: rgba(15, 23, 42, 0.2); /* very subtle dark fill to cover stars if any */
   stroke: url(#neon-gradient);
   stroke-width: 3px;
   filter: url(#neon-glow);
 }
 
-/* Background blurred orbs */
+/* Background blurred orbs (Soft gradient glow behind the white blob) */
 .orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.6;
+  filter: blur(70px);
+  opacity: 0.8;
   z-index: 1;
   animation: orb-float 10s ease-in-out infinite alternate;
 }
 
 .orb-1 {
-  width: 250px;
-  height: 250px;
-  background: #fca5a5;
+  width: 280px;
+  height: 280px;
+  background: #fca5a5; /* Peach/orange glow */
   top: 15%;
-  left: 10%;
+  left: 0%;
   animation-delay: -3s;
 }
 
 .orb-2 {
   width: 280px;
   height: 280px;
-  background: #86efac;
-  bottom: 15%;
-  right: 5%;
+  background: #86efac; /* Mint/green glow */
+  bottom: 10%;
+  right: 0%;
 }
 
 [data-theme="dark"] .orb-1 {
   background: #d946ef;
-  opacity: 0.2;
+  opacity: 0.15;
 }
 
 [data-theme="dark"] .orb-2 {
   background: #06b6d4;
-  opacity: 0.2;
+  opacity: 0.15;
 }
 
-/* Dot Matrices */
+/* Dot Matrices (Minimalist dots) */
 .dot-matrix {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   background-image: radial-gradient(circle, var(--text-muted) 2px, transparent 2px);
-  background-size: 20px 20px;
-  opacity: 0.2;
+  background-size: 18px 18px;
+  opacity: 0.25;
   z-index: 0;
 }
 
 .dot-matrix-1 {
-  top: 10%;
-  right: 15%;
+  top: 15%;
+  right: 5%;
 }
 
 .dot-matrix-2 {
-  bottom: 10%;
+  bottom: 15%;
   left: 5%;
 }
 
@@ -204,37 +206,17 @@
   display: none;
 }
 
-/* Small floating shapes */
-.floating-shape {
-  position: absolute;
-  border-radius: 50%;
-  z-index: 3;
-  animation: float 6s ease-in-out infinite;
-}
-
-.shape-1 { width: 12px; height: 12px; background: #fca5a5; top: 25%; left: 15%; animation-delay: 0s; }
-.shape-2 { width: 18px; height: 18px; background: #86efac; bottom: 35%; right: 10%; animation-delay: 1s; }
-.shape-3 { width: 10px; height: 10px; background: #fca5a5; bottom: 20%; left: 25%; animation-delay: 2s; opacity: 0.6; }
-.shape-4 { width: 14px; height: 14px; background: #fdba74; top: 15%; right: 30%; animation-delay: 3s; }
-
-[data-theme="dark"] .floating-shape {
-  display: none;
-}
-
-.image-frame-cutout {
+/* The actual photo cutout */
+.hero-photo {
   position: relative;
   width: 100%;
-  max-width: 320px;
-  z-index: 2;
-  margin-right: 2rem; /* Shift slightly left */
-}
-
-.image-frame-cutout img {
-  width: 100%;
   height: auto;
+  z-index: 2;
   display: block;
-  /* Optional: if you want to mask out the white background on light mode, 
-     you could use mix-blend-mode: multiply; but it fails on dark mode. */
+  object-fit: contain;
+  /* Ensuring absolutely no background */
+  background: transparent;
+  border: none;
 }
 
 /* Animations */

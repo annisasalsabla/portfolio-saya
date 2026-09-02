@@ -81,19 +81,19 @@ const Hero = () => {
         </motion.div>
 
         {/* Profile Photo */}
-        <div className="hero-image-container">
-          {/* Decorative Blob */}
-          <div className="hero-blob">
+        <motion.div 
+          className="hero-image"
+          variants={imageVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Decorative Glow */}
+          <div className="hero-glow">
             <div className="dot-matrix dot-matrix-1"></div>
             <div className="dot-matrix dot-matrix-2"></div>
             
             <div className="orb orb-1"></div>
             <div className="orb orb-2"></div>
-            
-            <div className="floating-shape shape-1"></div>
-            <div className="floating-shape shape-2"></div>
-            <div className="floating-shape shape-3"></div>
-            <div className="floating-shape shape-4"></div>
             
             <svg viewBox="0 0 200 200" className="blob-svg" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -121,17 +121,8 @@ const Hero = () => {
             </svg>
           </div>
           
-          <motion.div 
-            className="hero-image-wrapper floating-animation"
-            variants={imageVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <div className="image-frame-cutout">
-              <img src="/images/aku.jpeg" alt="Annisa Salsabila" loading="eager" />
-            </div>
-          </motion.div>
-        </div>
+          <img src="/images/aku.jpg" alt="Annisa Salsabila" className="hero-photo floating-animation" loading="eager" />
+        </motion.div>
 
       </div>
     </section>
