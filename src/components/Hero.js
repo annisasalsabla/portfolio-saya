@@ -82,12 +82,6 @@ const Hero = () => {
             <div className="image-frame">
               <img src="/images/aku.jpeg" alt="Annisa Salsabila" loading="eager" />
             </div>
-
-            {/* Floating Badge */}
-            <div className="status-badge">
-              <div className="status-dot"></div>
-              <span>Open to Work</span>
-            </div>
           </motion.div>
         </div>
 
