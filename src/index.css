@@ -42,6 +42,24 @@
   --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Dark Mode Variables */
+:root[data-theme="dark"] {
+  --bg-color: #0F172A;
+  --bg-surface: #1E293B;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  
+  --accent-primary: #E07A5F;
+  --accent-primary-hover: #F4A261;
+  --accent-secondary: #2DD4BF;
+  --accent-secondary-hover: #14B8A6;
+  
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.6);
+  --shadow-lg: 0 12px 24px rgba(0,0,0,0.8);
+  --shadow-floating: 0 20px 40px rgba(45, 212, 191, 0.15);
+}
+
 /* ===== RESET & GLOBAL STYLES ===== */
 *, *::before, *::after {
   box-sizing: border-box;

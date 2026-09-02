@@ -25,7 +25,7 @@ const About = () => {
           variants={scrollVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, margin: "-100px" }}
         >
           <h2 className="section-title">Tentang Saya</h2>
         </motion.div>
@@ -36,7 +36,7 @@ const About = () => {
             variants={scrollVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, margin: "-100px" }}
           >
             <p>
               Fresh graduate dengan pengalaman langsung di bidang IT, khususnya pengembangan sistem berbasis web dan aplikasi. Pernah menjalani program magang di PT Rapier Technology International, mengerjakan pengembangan REST API untuk sistem informasi perusahaan.

@@ -27,7 +27,7 @@ const Contact = () => {
           className="section-header text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title">Mari Berkolaborasi</h2>
@@ -41,7 +41,7 @@ const Contact = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, margin: "-100px" }}
         >
           <motion.a 
             href="mailto:nisasalsabila23050505@gmail.com" 

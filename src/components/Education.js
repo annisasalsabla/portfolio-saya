@@ -25,7 +25,7 @@ const Education = () => {
           variants={scrollVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, margin: "-100px" }}
         >
           <h2 className="section-title">Pendidikan</h2>
         </motion.div>
@@ -35,7 +35,7 @@ const Education = () => {
           variants={scrollVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, margin: "-100px" }}
         >
           <div className="education-card">
             <div className="education-icon">

@@ -17,6 +17,30 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  // Theme state
+  const [theme, setTheme] = useState('light');
+
+  // Initialize theme
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme) {
+      setTheme(savedTheme);
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    } else if (prefersDark) {
+      setTheme('dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('portfolio-theme', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,19 +94,54 @@ const Navbar = () => {
               )}
             </a>
           ))}
+          
+          <button 
+            className="theme-toggle-btn" 
+            onClick={toggleTheme}
+            aria-label="Toggle Theme"
+            style={{ 
+              background: 'transparent', 
+              border: 'none', 
+              color: 'var(--text-main)', 
+              fontSize: '1.2rem', 
+              cursor: 'pointer',
+              marginLeft: '0.5rem'
+            }}
+          >
+            <i className={theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'}></i>
+          </button>
+
           <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
             Lihat CV
           </a>
         </div>
 
-        {/* Mobile Toggle */}
-        <button 
-          className="mobile-toggle" 
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle Menu"
-        >
-          <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
-        </button>
+        {/* Mobile Toggle & Theme */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }} className="mobile-actions">
+          <button 
+            className="theme-toggle-btn mobile-only" 
+            onClick={toggleTheme}
+            aria-label="Toggle Theme"
+            style={{ 
+              background: 'transparent', 
+              border: 'none', 
+              color: 'var(--text-main)', 
+              fontSize: '1.2rem', 
+              cursor: 'pointer',
+              display: 'none' // will be shown via CSS media query
+            }}
+          >
+            <i className={theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'}></i>
+          </button>
+          
+          <button 
+            className="mobile-toggle" 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Menu"
+          >
+            <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}

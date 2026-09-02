@@ -46,24 +46,36 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.div variants={itemVariants} className="badge hero-badge">
-            Backend Developer
-          </motion.div>
-          
-          <motion.h1 variants={itemVariants} className="hero-title">
-            Halo, saya <span className="text-primary">Annisa Salsabila</span>.
-          </motion.h1>
-          
-          <motion.p variants={itemVariants} className="hero-desc">
-            Fresh graduate dengan pengalaman langsung di bidang IT, khususnya pengembangan sistem berbasis web dan aplikasi.
+          <motion.p variants={itemVariants} className="hero-greeting">
+            Hello, my name is
           </motion.p>
           
-          <motion.div variants={itemVariants} className="hero-actions">
-            <a href="#projects" className="btn btn-primary">
-              Lihat Projek Saya
+          <motion.h1 variants={itemVariants} className="hero-title">
+            Annisa Salsabila
+          </motion.h1>
+          
+          <motion.h2 variants={itemVariants} className="hero-subtitle">
+            I'm a <span className="text-secondary-accent">Web / Mobile Developer</span>
+          </motion.h2>
+          
+          <motion.div variants={itemVariants} className="hero-socials">
+            <a href="https://github.com/annisasalsabla" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <i className="fab fa-github"></i>
             </a>
-            <a href="#contact" className="btn btn-secondary">
-              Hubungi Saya
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:email@example.com" className="social-icon">
+              <i className="fas fa-envelope"></i>
+            </a>
+          </motion.div>
+          
+          <motion.div variants={itemVariants} className="hero-actions">
+            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary">
+              DOWNLOAD CV
             </a>
           </motion.div>
         </motion.div>
@@ -79,7 +91,7 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
           >
-            <div className="image-frame">
+            <div className="image-frame-cutout">
               <img src="/images/aku.jpeg" alt="Annisa Salsabila" loading="eager" />
             </div>
           </motion.div>
