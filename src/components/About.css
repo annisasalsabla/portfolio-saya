@@ -4,9 +4,11 @@
 
 .about-grid {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1fr;
   gap: var(--space-6);
   align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .about-text-content p {

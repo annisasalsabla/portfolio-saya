@@ -5,6 +5,7 @@ import './Navbar.css';
 const navLinks = [
   { id: 'home', label: 'Beranda' },
   { id: 'about', label: 'Tentang' },
+  { id: 'education', label: 'Pendidikan' },
   { id: 'skills', label: 'Skills' },
   { id: 'experience', label: 'Pengalaman' },
   { id: 'projects', label: 'Projek' },

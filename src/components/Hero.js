@@ -44,7 +44,7 @@ const Hero = () => {
           </motion.h1>
           
           <motion.p variants={itemVariants} className="hero-desc">
-            Fresh graduate dengan pengalaman langsung di bidang IT, khususnya pengembangan sistem berbasis web dan aplikasi. Terbiasa mengerjakan proyek end-to-end menggunakan Laravel, React, dan Flutter.
+            Fresh graduate dengan pengalaman langsung di bidang IT, khususnya pengembangan sistem berbasis web dan aplikasi.
           </motion.p>
           
           <motion.div variants={itemVariants} className="hero-actions">
