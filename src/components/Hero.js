@@ -1,8 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import './Hero.css';
 
 const Hero = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -16,11 +18,20 @@ const Hero = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
     visible: { 
       opacity: 1, 
       y: 0,
       transition: { type: 'spring', stiffness: 50, damping: 15 }
+    }
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: shouldReduceMotion ? 1 : 0.9 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { duration: 0.8, type: 'spring', stiffness: 50, delay: 0.4 }
     }
   };
 
@@ -58,16 +69,27 @@ const Hero = () => {
         </motion.div>
 
         {/* Profile Photo */}
-        <motion.div 
-          className="hero-image-wrapper"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, type: 'spring', stiffness: 50 }}
-        >
-          <div className="image-frame">
-            <img src="/images/aku.jpeg" alt="Annisa Salsabila" loading="eager" />
-          </div>
-        </motion.div>
+        <div className="hero-image-container">
+          {/* Decorative Blob */}
+          <div className="hero-blob"></div>
+          
+          <motion.div 
+            className="hero-image-wrapper floating-animation"
+            variants={imageVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <div className="image-frame">
+              <img src="/images/aku.jpeg" alt="Annisa Salsabila" loading="eager" />
+            </div>
+
+            {/* Floating Badge */}
+            <div className="status-badge">
+              <div className="status-dot"></div>
+              <span>Open to Work</span>
+            </div>
+          </motion.div>
+        </div>
 
       </div>
     </section>
