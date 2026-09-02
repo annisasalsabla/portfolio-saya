@@ -62,6 +62,10 @@
   color: var(--accent-secondary);
 }
 
+.theme-toggle-btn.mobile-only {
+  display: none;
+}
+
 .mobile-menu {
   display: none;
   overflow: hidden;

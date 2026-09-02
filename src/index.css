@@ -10,6 +10,9 @@
   --accent-secondary: #1B3A2B;
   --accent-secondary-hover: #142a20;
   
+  /* Glass */
+  --glass-bg: rgba(245, 240, 230, 0.85);
+  
   /* Typography */
   --font-body: 'Inter', sans-serif;
   --font-heading: 'Playfair Display', serif;
@@ -54,6 +57,8 @@
   --accent-secondary: #2DD4BF;
   --accent-secondary-hover: #14B8A6;
   
+  --glass-bg: rgba(15, 23, 42, 0.85);
+
   --shadow-sm: 0 2px 4px rgba(0,0,0,0.5);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.6);
   --shadow-lg: 0 12px 24px rgba(0,0,0,0.8);
@@ -220,7 +225,7 @@ img {
 
 /* Glassmorphism utility */
 .glass {
-  background: rgba(245, 240, 230, 0.85);
+  background: var(--glass-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }

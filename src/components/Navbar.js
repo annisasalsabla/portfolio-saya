@@ -123,8 +123,7 @@ const Navbar = () => {
               border: 'none', 
               color: 'var(--text-main)', 
               fontSize: '1.2rem', 
-              cursor: 'pointer',
-              display: 'none' // will be shown via CSS media query
+              cursor: 'pointer'
             }}
           >
             <i className={theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'}></i>

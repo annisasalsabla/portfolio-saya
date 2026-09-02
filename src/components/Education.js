@@ -46,7 +46,7 @@ const Education = () => {
                 <i className="fas fa-graduation-cap"></i>
               </div>
               <p className="education-text">
-                Saya adalah lulusan <strong>D3 Program Studi Manajemen Informatika</strong>, Jurusan Teknologi Informasi, <strong>Politeknik Negeri Padang (2023–2026)</strong> dengan <strong>IPK 3.65</strong>. Selama masa studi, saya berfokus pada pengembangan sistem berbasis web dan mobile, serta memperdalam kemampuan programming melalui program magang di <strong>PT Rapier Technology International</strong>.
+                Saya adalah lulusan <strong>D3 Program Studi Manajemen Informatika</strong>, Jurusan Teknologi Informasi, <strong>Politeknik Negeri Padang (2023–2026)</strong> dengan <strong>IPK 3.65</strong>. Selama masa studi, saya berfokus pada pengembangan sistem berbasis web dan mobile.
               </p>
             </div>
           </div>
