@@ -83,7 +83,43 @@ const Hero = () => {
         {/* Profile Photo */}
         <div className="hero-image-container">
           {/* Decorative Blob */}
-          <div className="hero-blob"></div>
+          <div className="hero-blob">
+            <div className="dot-matrix dot-matrix-1"></div>
+            <div className="dot-matrix dot-matrix-2"></div>
+            
+            <div className="orb orb-1"></div>
+            <div className="orb orb-2"></div>
+            
+            <div className="floating-shape shape-1"></div>
+            <div className="floating-shape shape-2"></div>
+            <div className="floating-shape shape-3"></div>
+            <div className="floating-shape shape-4"></div>
+            
+            <svg viewBox="0 0 200 200" className="blob-svg" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="neon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#d946ef" />
+                  <stop offset="100%" stopColor="#06b6d4" />
+                </linearGradient>
+                <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="2" result="blur1" />
+                  <feGaussianBlur stdDeviation="4" result="blur2" />
+                  <feGaussianBlur stdDeviation="6" result="blur3" />
+                  <feMerge>
+                    <feMergeNode in="blur3" />
+                    <feMergeNode in="blur2" />
+                    <feMergeNode in="blur1" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+              <path 
+                className="blob-path" 
+                d="M48.2,-61C62.7,-51.2,74.6,-36.8,79.8,-20.3C85,-3.8,83.5,14.8,75,30.3C66.5,45.8,51.1,58.2,33.9,65.8C16.8,73.4,-2.2,76.2,-20.4,72.6C-38.6,69.1,-55.9,59.3,-67.2,44.7C-78.5,30.1,-83.8,10.7,-81.1,-7.2C-78.4,-25.1,-67.7,-41.5,-53.4,-51.3C-39,-61.2,-19.5,-64.5,-1.3,-62.9C16.9,-61.3,33.8,-70.8,48.2,-61Z" 
+                transform="translate(100 100)" 
+              />
+            </svg>
+          </div>
           
           <motion.div 
             className="hero-image-wrapper floating-animation"
