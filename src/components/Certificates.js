@@ -6,6 +6,7 @@ const Certificates = () => {
   const [selectedCert, setSelectedCert] = useState(null);
 
   const certData = [
+    { id: 9, img: '/images/sertifikatmagang.png', title: 'Sertifikat Magang / Praktik Kerja Lapangan', issuer: 'PT Rapier Technology International', date: 'Februari 2026 – Mei 2026' },
     { id: 1, img: '/images/s8.png', title: 'AWS Academy Graduate – Cloud Foundations', issuer: 'AWS Academy', date: 'Juni 2025 – Juni 2028' },
     { id: 2, img: '/images/s6.png', title: 'Red Hat System Administration I (RH124)', issuer: 'Red Hat', date: 'Juli 2024 – Juli 2028' },
     { id: 3, img: '/images/s5.png', title: 'NDG Linux Essentials', issuer: 'Cisco Networking Academy', date: '30 Juni 2024' },

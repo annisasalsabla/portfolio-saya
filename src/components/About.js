@@ -71,10 +71,7 @@ const About = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           <p>
-            Fresh graduate dengan pengalaman langsung di bidang IT, khususnya pengembangan sistem berbasis web dan aplikasi. Pernah menjalani program magang di PT Rapier Technology International, mengerjakan pengembangan REST API untuk sistem informasi perusahaan.
-          </p>
-          <p>
-            Terbiasa mengerjakan proyek end-to-end menggunakan Laravel, React, dan Flutter, mulai dari perancangan database hingga integrasi sistem. Memiliki rasa ingin tahu tinggi, cepat beradaptasi dengan teknologi baru, dan siap berkontribusi penuh semangat di tim IT mana pun.
+            Lulusan D3 Teknologi Informasi Politeknik Negeri Padang dengan ketertarikan pada bidang IT. Memiliki pengalaman langsung di bidang IT, khususnya pengembangan sistem berbasis web dan aplikasi. Terbiasa mengerjakan proyek end-to-end menggunakan Laravel, React, Flutter dan bahasa pemrograman lainnya mulai dari perancangan database hingga integrasi sistem. Memiliki rasa ingin tahu tinggi, cepat beradaptasi dengan teknologi baru, dan siap berkontribusi penuh semangat di tim IT mana pun.
           </p>
           <p className="resume-prompt">
             Ingin tahu lebih lanjut tentang pengalaman saya? <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="resume-link">Unduh CV saya</a>
