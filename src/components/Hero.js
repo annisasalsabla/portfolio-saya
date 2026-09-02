@@ -47,7 +47,7 @@ const Hero = () => {
           animate="visible"
         >
           <motion.p variants={itemVariants} className="hero-greeting">
-            Hello, my name is
+            Halo, nama saya
           </motion.p>
           
           <motion.h1 variants={itemVariants} className="hero-title">
@@ -55,7 +55,7 @@ const Hero = () => {
           </motion.h1>
           
           <motion.h2 variants={itemVariants} className="hero-subtitle">
-            I'm a <span className="text-secondary-accent">Web / Mobile Developer</span>
+            Saya seorang <span className="text-secondary-accent">Web / Mobile Developer</span>
           </motion.h2>
           
           <motion.div variants={itemVariants} className="hero-socials">
@@ -75,7 +75,7 @@ const Hero = () => {
           
           <motion.div variants={itemVariants} className="hero-actions">
             <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary">
-              DOWNLOAD CV
+              UNDUH CV
             </a>
           </motion.div>
         </motion.div>
