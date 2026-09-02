@@ -253,6 +253,11 @@ const Projects = () => {
                       <MobileMockup src={project.images[0]} />
                     </div>
                   )}
+                  {project.type === 'web' && (
+                    <div className="visual-center">
+                      <WebMockup src={project.images[0]} />
+                    </div>
+                  )}
                   {project.type === 'hybrid' && (
                     <div className="visual-hybrid">
                       <WebMockup src={project.images.web} />
@@ -311,6 +316,11 @@ const Projects = () => {
                   {selectedProject.type === 'mobile' && (
                     <div className="visual-center">
                       <MobileMockup src={selectedProject.images[0]} />
+                    </div>
+                  )}
+                  {selectedProject.type === 'web' && (
+                    <div className="visual-center">
+                      <WebMockup src={selectedProject.images[0]} />
                     </div>
                   )}
                   {selectedProject.type === 'hybrid' && (
