@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Tilt from 'react-parallax-tilt';
 import './Certificates.css';
 
 const Certificates = () => {
