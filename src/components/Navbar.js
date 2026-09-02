@@ -66,12 +66,28 @@ const Navbar = () => {
   const handleNavClick = (e, id) => {
     e.preventDefault();
     setActiveSection(id);
-    setIsMobileMenuOpen(false);
     
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      window.history.pushState(null, '', `#${id}`);
+    // If mobile menu is open, close it first then scroll after animation
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+      // Wait for the close animation (300ms) to finish before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          const navbarHeight = 80;
+          const elementTop = element.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+          window.scrollTo({ top: elementTop, behavior: 'smooth' });
+          window.history.pushState(null, '', `#${id}`);
+        }
+      }, 320);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        const navbarHeight = 80;
+        const elementTop = element.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+        window.scrollTo({ top: elementTop, behavior: 'smooth' });
+        window.history.pushState(null, '', `#${id}`);
+      }
     }
   };
 
