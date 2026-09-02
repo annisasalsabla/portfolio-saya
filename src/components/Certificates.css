@@ -143,12 +143,12 @@
   background: rgba(0,0,0,0.2);
 }
 
-.modal-body {
+.cert-modal-content .modal-body {
   display: flex;
   flex-direction: column;
 }
 
-.modal-body img {
+.cert-modal-content .modal-body img {
   width: 100%;
   max-height: 60vh;
   object-fit: contain;
@@ -156,22 +156,22 @@
   padding: var(--space-4);
 }
 
-.modal-details {
+.cert-modal-content .modal-details {
   padding: var(--space-5);
 }
 
-.modal-details h3 {
+.cert-modal-content .modal-details h3 {
   font-size: 1.5rem;
   color: var(--accent-secondary);
   margin-bottom: var(--space-2);
 }
 
-.modal-details p {
+.cert-modal-content .modal-details p {
   margin-bottom: var(--space-1);
 }
 
 @media (max-width: 768px) {
-  .modal-details {
+  .cert-modal-content .modal-details {
     padding: var(--space-4);
   }
 }
