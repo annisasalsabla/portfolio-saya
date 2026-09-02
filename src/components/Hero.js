@@ -121,7 +121,7 @@ const Hero = () => {
             </svg>
           </div>
           
-          <img src="/images/aku.jpg" alt="Annisa Salsabila" className="hero-photo floating-animation" loading="eager" />
+          <img src="/images/aku.png" alt="Annisa Salsabila" className="hero-photo floating-animation" loading="eager" />
         </motion.div>
 
       </div>
