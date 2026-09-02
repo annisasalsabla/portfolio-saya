@@ -11,7 +11,7 @@ const Footer = () => {
     }}>
       <div className="container">
         <p style={{ opacity: 0.8, fontSize: '0.9rem' }}>
-          &copy; {new Date().getFullYear()} Annisa Salsabila. Dibangun dengan React & Framer Motion.
+          © 2026 Annisa Salsabila. All Rights Reserved.
         </p>
       </div>
     </footer>
