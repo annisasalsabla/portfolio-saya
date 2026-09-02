@@ -75,8 +75,8 @@ const Experience = () => {
                         animate={{ 
                           opacity: 1 - (offset * 0.15), 
                           scale: 1,
-                          x: offset * 35,
-                          y: offset * -15,
+                          x: offset * 20,
+                          y: offset * -10,
                           rotate: offset * 4,
                           zIndex: images.length - offset
                         }}

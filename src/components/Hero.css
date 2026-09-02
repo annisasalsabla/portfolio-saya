@@ -200,6 +200,10 @@
     justify-content: center;
   }
 
+  .image-frame-cutout {
+    margin-right: 0;
+  }
+
   .hero-blob {
     width: 100%;
     height: 100%;
