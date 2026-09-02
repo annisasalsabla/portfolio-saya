@@ -72,7 +72,7 @@ const Navbar = () => {
     >
       <div className="container nav-container">
         <a href="#home" className="nav-logo" onClick={() => setActiveSection('home')}>
-          Portfolio
+          Portofolio
         </a>
 
         {/* Desktop Menu */}
