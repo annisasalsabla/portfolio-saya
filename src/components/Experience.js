@@ -33,7 +33,7 @@ const Experience = () => {
           className="section-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title">Pengalaman Kerja</h2>
@@ -45,7 +45,7 @@ const Experience = () => {
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true, margin: "-100px" }}
           >
             <div className="timeline-dot"></div>
             <div className="timeline-content glass-card">

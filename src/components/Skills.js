@@ -70,7 +70,7 @@ const Skills = () => {
           className="section-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title">Keahlian & Tools</h2>
@@ -85,7 +85,7 @@ const Skills = () => {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, margin: "-50px" }}
+              viewport={{ once: true, margin: "-50px" }}
             >
               <h3 className="skill-category-title">{category.title}</h3>
               <div className="skill-badges">

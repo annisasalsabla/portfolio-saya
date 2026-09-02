@@ -25,10 +25,10 @@ const About = () => {
           variants={scrollVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true, margin: "-100px" }}
         >
-          <span className="about-label">ABOUT ME</span>
-          <h2 className="about-headline">Backend Developer. Tech Enthusiast.</h2>
+          <span className="about-label">TENTANG SAYA</span>
+          <h2 className="about-headline">Web/Mobile Developer. Tech Enthusiast.</h2>
         </motion.div>
 
         <motion.div 
@@ -36,7 +36,7 @@ const About = () => {
           variants={scrollVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           <div className="profile-avatar">
             <img src="/images/aboutme.jpeg" alt="Annisa Salsabila" loading="lazy" />
@@ -48,15 +48,15 @@ const About = () => {
             </div>
             <div className="profile-stats">
               <div className="stat-item">
-                <span className="stat-label">PROJECTS</span>
-                <span className="stat-value">5+</span>
+                <span className="stat-label">PROJEK</span>
+                <span className="stat-value">15+</span>
               </div>
               <div className="stat-item">
-                <span className="stat-label">CERTIFICATES</span>
+                <span className="stat-label">SERTIFIKAT</span>
                 <span className="stat-value">10+</span>
               </div>
               <div className="stat-item">
-                <span className="stat-label">GRADUATING</span>
+                <span className="stat-label">LULUS</span>
                 <span className="stat-value">2026</span>
               </div>
             </div>
@@ -68,7 +68,7 @@ const About = () => {
           variants={scrollVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           <p>
             Fresh graduate dengan pengalaman langsung di bidang IT, khususnya pengembangan sistem berbasis web dan aplikasi. Pernah menjalani program magang di PT Rapier Technology International, mengerjakan pengembangan REST API untuk sistem informasi perusahaan.
@@ -77,7 +77,7 @@ const About = () => {
             Terbiasa mengerjakan proyek end-to-end menggunakan Laravel, React, dan Flutter, mulai dari perancangan database hingga integrasi sistem. Memiliki rasa ingin tahu tinggi, cepat beradaptasi dengan teknologi baru, dan siap berkontribusi penuh semangat di tim IT mana pun.
           </p>
           <p className="resume-prompt">
-            Ingin tahu lebih lanjut tentang pengalaman saya? <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="resume-link">Download my resume</a>
+            Ingin tahu lebih lanjut tentang pengalaman saya? <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="resume-link">Unduh CV saya</a>
           </p>
         </motion.div>
 
@@ -86,29 +86,29 @@ const About = () => {
           variants={scrollVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true, margin: "-100px" }}
         >
-          <span className="currently-label">CURRENTLY</span>
+          <span className="currently-label">SAAT INI</span>
           <div className="currently-grid">
             <div className="currently-item">
               <i className="fas fa-code currently-icon"></i>
               <div className="currently-text">
-                <span className="currently-title">Building</span>
-                <span className="currently-desc">Web & mobile projects</span>
+                <span className="currently-title">Membangun</span>
+                <span className="currently-desc">Projek Web & Mobile</span>
               </div>
             </div>
             <div className="currently-item">
               <i className="fas fa-flask currently-icon"></i>
               <div className="currently-text">
-                <span className="currently-title">Exploring</span>
-                <span className="currently-desc">Backend optimization & API</span>
+                <span className="currently-title">Mengeksplorasi</span>
+                <span className="currently-desc">Optimasi Backend & API</span>
               </div>
             </div>
             <div className="currently-item">
               <i className="fas fa-rocket currently-icon"></i>
               <div className="currently-text">
-                <span className="currently-title">Learning</span>
-                <span className="currently-desc">Full-stack development</span>
+                <span className="currently-title">Mempelajari</span>
+                <span className="currently-desc">Pengembangan Full-stack</span>
               </div>
             </div>
           </div>

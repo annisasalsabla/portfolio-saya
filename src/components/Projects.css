@@ -174,12 +174,12 @@
 }
 
 .project-visuals {
-  padding: var(--space-5);
+  padding: var(--space-4);
   background-color: rgba(27, 58, 43, 0.05);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 350px;
+  min-height: 280px;
   position: relative;
 }
 
@@ -258,10 +258,10 @@
 
 /* Smartphone Mockup */
 .mockup-smartphone {
-  width: 200px;
+  width: 160px;
   background: #111;
-  border-radius: 24px;
-  padding: 6px;
+  border-radius: 20px;
+  padding: 5px;
   position: relative;
   box-shadow: var(--shadow-lg);
   border: 2px solid #333;
