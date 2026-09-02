@@ -1,9 +1,9 @@
 .hero-section {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* Push container to the bottom */
   padding-top: var(--space-10);
-  padding-bottom: var(--space-6);
+  padding-bottom: 0; /* No padding at bottom so image sits exactly on the edge */
   position: relative;
   overflow: hidden;
 }
@@ -12,7 +12,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-6);
-  align-items: center;
+  align-items: center; /* Keeps text vertically centered relative to image */
+  width: 100%;
 }
 
 .hero-content {
