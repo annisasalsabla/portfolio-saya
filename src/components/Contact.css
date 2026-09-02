@@ -1,0 +1,91 @@
+.contact-section {
+  background-color: var(--bg-surface);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-5);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background: var(--bg-color);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: box-shadow var(--transition-normal);
+  border: 1px solid rgba(27, 58, 43, 0.05);
+}
+
+.contact-card:hover:not(.location) {
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-primary);
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: var(--space-3);
+}
+
+.contact-icon.email {
+  background: rgba(193, 98, 42, 0.1);
+  color: var(--accent-primary);
+}
+
+.contact-icon.whatsapp {
+  background: rgba(39, 201, 63, 0.1);
+  color: #27c93f;
+}
+
+.contact-icon.map {
+  background: rgba(27, 58, 43, 0.1);
+  color: var(--accent-secondary);
+}
+
+.contact-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-main);
+  margin-bottom: var(--space-2);
+}
+
+.contact-card p {
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+  font-size: 1rem;
+}
+
+.contact-action {
+  margin-top: auto;
+  font-weight: 600;
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.contact-card.location .contact-action {
+  color: var(--accent-secondary);
+}

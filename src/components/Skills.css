@@ -1,0 +1,80 @@
+.skills-section {
+  background-color: var(--bg-color);
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.skill-category-title {
+  font-size: 1.5rem;
+  color: var(--accent-secondary);
+  margin-bottom: var(--space-4);
+  border-bottom: 2px solid rgba(27, 58, 43, 0.1);
+  padding-bottom: var(--space-2);
+}
+
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.skill-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.6rem 1.2rem;
+  background-color: transparent;
+  border: 2px solid rgba(27, 58, 43, 0.15);
+  border-radius: var(--radius-full);
+  color: var(--text-main);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: default;
+  background: var(--bg-surface);
+}
+
+.skill-badge:hover {
+  border-color: var(--accent-secondary);
+  background-color: var(--accent-secondary);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-md);
+}
+
+.skill-icon-wrapper {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.skill-image-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* Specific icon colors when not hovered */
+.skill-badge:hover .icon {
+  color: #FFFFFF !important;
+}
+
+.icon.laravel { color: #FF2D20; }
+.icon.react { color: #61DAFB; }
+.icon.flutter { color: #02569B; }
+.icon.kotlin { color: #7F52FF; }
+.icon.php { color: #777BB4; }
+.icon.js { color: #F7DF1E; }
+.icon.dart { color: #0175C2; }
+.icon.html { color: #E34F26; }
+.icon.css { color: #1572B6; }
+.icon.mysql { color: #4479A1; }
+.icon.pg { color: #336791; }
+.icon.vscode { color: #007ACC; }
+.icon.git { color: #F05032; }
+.icon.github { color: #181717; }
+.icon.figma { color: #F24E1E; }
+.icon.docker { color: #2496ED; }
+.icon.xcode { color: #157EFB; }
