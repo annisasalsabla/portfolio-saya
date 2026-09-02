@@ -63,6 +63,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+    setActiveSection(id);
+    setIsMobileMenuOpen(false);
+    
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', `#${id}`);
+    }
+  };
+
   return (
     <motion.nav 
       className={`navbar ${isScrolled ? 'glass' : ''}`}
@@ -71,7 +83,7 @@ const Navbar = () => {
       transition={{ duration: 0.5, type: 'spring', stiffness: 100 }}
     >
       <div className="container nav-container">
-        <a href="#home" className="nav-logo" onClick={() => setActiveSection('home')}>
+        <a href="#home" className="nav-logo" onClick={(e) => handleNavClick(e, 'home')}>
           Portofolio
         </a>
 
@@ -82,7 +94,7 @@ const Navbar = () => {
               key={link.id} 
               href={`#${link.id}`}
               className={`nav-link ${activeSection === link.id ? 'active' : ''}`}
-              onClick={() => setActiveSection(link.id)}
+              onClick={(e) => handleNavClick(e, link.id)}
             >
               {link.label}
               {activeSection === link.id && (
@@ -154,10 +166,7 @@ const Navbar = () => {
                 key={link.id} 
                 href={`#${link.id}`}
                 className={`mobile-link ${activeSection === link.id ? 'active' : ''}`}
-                onClick={() => {
-                  setActiveSection(link.id);
-                  setIsMobileMenuOpen(false);
-                }}
+                onClick={(e) => handleNavClick(e, link.id)}
               >
                 {link.label}
               </a>
