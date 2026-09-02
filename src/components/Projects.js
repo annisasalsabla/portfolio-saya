@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './Projects.css';
 
 const Projects = () => {
-  const [activeCategory, setActiveCategory] = useState('magang');
+  const [activeCategory, setActiveCategory] = useState('web');
   const [selectedProject, setSelectedProject] = useState(null);
 
   const containerVariants = {
@@ -25,16 +25,123 @@ const Projects = () => {
   };
 
   const projectsData = {
+    web: [
+      {
+        id: 'sik-pnp',
+        title: 'SIK PNP - Sistem Informasi Kuesioner',
+        description: 'Sistem informasi kuesioner Politeknik Negeri Padang yang dikembangkan menggunakan PHP dengan dukungan HTML, CSS, dan JavaScript untuk memudahkan pengelolaan dan pengisian kuesioner.',
+        type: 'web',
+        images: ['/images/web1.png'],
+        tech: ['PHP', 'MySQL', 'HTML5', 'CSS3', 'JavaScript'],
+        features: [
+          'Manajemen data kuesioner',
+          'Pengisian kuesioner online',
+          'Generate laporan otomatis',
+          'Multi-user access system',
+          'Dashboard admin'
+        ]
+      },
+      {
+        id: 'wisata-padang',
+        title: 'Website Wisata Kota Padang',
+        description: 'Website wisata dengan Sistem Informasi Geografis (SIG) untuk menampilkan lokasi wisata pada peta secara interaktif.',
+        type: 'web',
+        images: ['/images/web2.png'],
+        tech: ['PHP', 'JavaScript', 'Google Maps API', 'HTML5', 'CSS3'],
+        features: [
+          'Peta wisata interaktif',
+          'Informasi detail lokasi',
+          'Kategori wisata',
+          'Search & filter',
+          'Responsive design'
+        ]
+      },
+      {
+        id: 'rs-antrian',
+        title: 'Sistem Antrian RS Annisa',
+        description: 'Sistem antrian digital rumah sakit yang dikembangkan menggunakan Laravel untuk mempermudah proses pendaftaran pasien dan monitoring pelayanan.',
+        type: 'web',
+        images: ['/images/web3.png'],
+        tech: ['Laravel', 'MySQL', 'Bootstrap', 'JavaScript', 'jQuery'],
+        features: [
+          'Pendaftaran pasien online',
+          'Manajemen antrian real-time',
+          'Dashboard admin & petugas',
+          'Laporan harian',
+          'Notifikasi antrian'
+        ]
+      }
+    ],
+    aplikasi: [
+      {
+        id: 'ta',
+        title: "Sistem Manajemen Inventory & Penjualan (TA)",
+        description: "Aplikasi mobile manajemen inventory & penjualan toko grosir dengan 3 role (Admin, Owner, Kasir), dashboard ringkasan penjualan, grafik mingguan, dan monitoring stok masuk-keluar.",
+        type: "mobile",
+        images: ["/images/projekta.png"],
+        tech: ["Flutter", "Laravel", "MySQL", "REST API"],
+        features: [
+          'Sistem 3 Role (Admin, Owner, Kasir)',
+          'Frontend dikembangkan dengan Flutter',
+          'Backend REST API dikembangkan dengan Laravel',
+          'Dashboard ringkasan penjualan & laba',
+          'Monitoring stok barang masuk-keluar',
+          'Grafik penjualan mingguan'
+        ]
+      },
+      {
+        id: 'yummy',
+        title: 'YUMMY - Food Explorer App',
+        description: 'Aplikasi mobile makanan yang dikembangkan menggunakan Flutter untuk menjelajahi makanan, melihat bahan-bahan, dan mengetahui lokasi makanan di peta.',
+        type: 'mobile',
+        images: ['/images/mobile1.png'],
+        tech: ['Flutter', 'Dart', 'Android Studio', 'Google Maps API'],
+        features: [
+          'Explorasi berbagai makanan',
+          'Detail bahan dan resep',
+          'Lokasi makanan di peta',
+          'UI modern dan clean',
+          'Favorite system'
+        ]
+      },
+      {
+        id: 'campus',
+        title: 'Campus Explorer App',
+        description: 'Aplikasi explorer kampus dengan Flutter frontend yang terhubung ke Lumen REST API, mendukung fungsi CRUD lengkap dan integrasi Google Maps API.',
+        type: 'mobile',
+        images: ['/images/mobile2.png'],
+        tech: ['Flutter', 'Dart', 'Lumen API', 'REST API', 'Google Maps'],
+        features: [
+          'CRUD operations',
+          'Google Maps integration',
+          'Campus location visualization',
+          'REST API connectivity',
+          'Modern UI design'
+        ]
+      },
+      {
+        id: 'clinic',
+        title: 'Clinic App - Doctor Appointment',
+        description: 'Prototipe antarmuka pengguna untuk aplikasi kesehatan mobile bernama Self Care, dirancang menggunakan Android Studio dengan Kotlin.',
+        type: 'mobile',
+        images: ['/images/mobile3.png'],
+        tech: ['Kotlin', 'Android Studio', 'XML', 'Material Design'],
+        features: [
+          'Doctor appointment booking',
+          'Modern healthcare UI',
+          'Patient profile management',
+          'Appointment scheduling',
+          'Clean user interface'
+        ]
+      }
+    ],
     magang: [
       {
         id: 'haloemas',
         title: "Sistem Informasi POS-HALOEMAS",
         description: "Pengembangan REST API backend untuk sistem POS — perancangan endpoint, integrasi data, optimasi komunikasi backend-frontend.",
-        type: "hybrid",
-        images: {
-          web: "/images/apihaloemas.png",
-          mobile: ["/images/mobile1.png", "/images/mobile2.png"]
-        },
+        type: "web",
+        images: ["/images/apihaloemas.png"],
         tech: ["Laravel", "REST API", "PostgreSQL", "PHP"],
         features: [
           'Perancangan endpoint REST API',
@@ -48,35 +155,14 @@ const Projects = () => {
         id: 'easywarehouse',
         title: "Sistem Informasi Easy Warehouse",
         description: "Backend REST API untuk sistem manajemen gudang (warehouse), pengelolaan data inventaris.",
-        type: "hybrid",
-        images: {
-          web: "/images/apiaesywarehouse.png",
-          mobile: ["/images/mobile3.png"]
-        },
+        type: "web",
+        images: ["/images/apiaesywarehouse.png"],
         tech: ["Laravel", "REST API", "MySQL"],
         features: [
           'Pengelolaan data barang masuk/keluar',
           'Integrasi API manajemen gudang',
           'Laporan inventaris otomatis',
           'Sistem pencatatan real-time'
-        ]
-      }
-    ],
-    mobile: [
-      {
-        id: 'ta',
-        title: "Sistem Manajemen Inventory & Penjualan (Tugas Akhir)",
-        description: "Aplikasi mobile manajemen inventory & penjualan toko grosir dengan 3 role (Admin, Owner, Kasir), dashboard ringkasan penjualan/laba/piutang, grafik mingguan, dan monitoring stok masuk-keluar.",
-        type: "mobile",
-        images: ["/images/projekta.png"],
-        tech: ["Flutter", "Laravel", "MySQL", "REST API"],
-        features: [
-          'Sistem 3 Role (Admin, Owner, Kasir)',
-          'Frontend dikembangkan dengan Flutter',
-          'Backend REST API dikembangkan dengan Laravel',
-          'Dashboard ringkasan penjualan & laba',
-          'Monitoring stok barang masuk-keluar',
-          'Grafik penjualan mingguan'
         ]
       }
     ]
@@ -125,16 +211,22 @@ const Projects = () => {
         {/* Tabs Filter */}
         <div className="project-tabs">
           <button 
+            className={`tab-btn ${activeCategory === 'web' ? 'active' : ''}`}
+            onClick={() => setActiveCategory('web')}
+          >
+            Projek Web
+          </button>
+          <button 
+            className={`tab-btn ${activeCategory === 'aplikasi' ? 'active' : ''}`}
+            onClick={() => setActiveCategory('aplikasi')}
+          >
+            Projek Aplikasi
+          </button>
+          <button 
             className={`tab-btn ${activeCategory === 'magang' ? 'active' : ''}`}
             onClick={() => setActiveCategory('magang')}
           >
             Projek Magang
-          </button>
-          <button 
-            className={`tab-btn ${activeCategory === 'mobile' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('mobile')}
-          >
-            Mobile Apps (TA)
           </button>
         </div>
 
