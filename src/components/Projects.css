@@ -333,16 +333,39 @@
   }
 }
 
+@media (max-width: 768px) {
+  .project-modal-content .modal-details {
+    padding: var(--space-4);
+  }
+  
+  .modal-visuals {
+    padding: var(--space-4);
+    min-height: 250px;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+  }
+}
+
 @media (max-width: 480px) {
   .project-visuals {
     min-height: 250px;
   }
   
   .mockup-smartphone {
-    width: 160px;
+    width: 140px;
   }
   
   .hybrid-mobile-gallery .mockup-smartphone {
     width: 60px;
+  }
+  
+  .modal-btn-actions {
+    flex-direction: column;
+  }
+  
+  .modal-btn-actions .btn {
+    width: 100%;
   }
 }

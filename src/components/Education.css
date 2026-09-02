@@ -48,3 +48,19 @@
 .education-text strong {
   color: var(--accent-secondary);
 }
+
+@media (max-width: 768px) {
+  .education-card {
+    padding: var(--space-4);
+  }
+  
+  .education-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  .education-text {
+    font-size: 1rem;
+  }
+}

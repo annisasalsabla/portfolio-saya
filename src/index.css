@@ -220,3 +220,22 @@ img {
     scroll-behavior: auto !important;
   }
 }
+
+/* Mobile Responsiveness Improvements */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-6) 0;
+  }
+  
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+  
+  .hero-section {
+    padding-top: var(--space-8);
+  }
+  
+  .container {
+    padding: 0 1.25rem;
+  }
+}
