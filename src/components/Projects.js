@@ -242,62 +242,50 @@ const Projects = () => {
             exit="exit"
           >
             {projectsData[activeCategory].map((project) => (
-              <Tilt 
-                key={project.id} 
-                tiltMaxAngleX={10} 
-                tiltMaxAngleY={10} 
-                perspective={1000} 
-                scale={1.02}
-                transitionSpeed={2000}
-                glareEnable={true}
-                glareMaxOpacity={0.15}
-                glareColor="#ffffff"
-                glarePosition="all"
+              <motion.div 
+                key={project.id}
+                className="project-card"
+                variants={projectVariants}
                 style={{ height: '100%' }}
+                whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}
               >
-                <motion.div 
-                  className="project-card"
-                  variants={projectVariants}
-                  style={{ height: '100%' }}
-                >
-                  <div className="project-visuals">
-                    {project.type === 'mobile' && (
-                      <div className="visual-center">
-                        <MobileMockup src={project.images[0]} />
-                      </div>
-                    )}
-                    {project.type === 'web' && (
-                      <div className="visual-center">
-                        <WebMockup src={project.images[0]} />
-                      </div>
-                    )}
-                    {project.type === 'hybrid' && (
-                      <div className="visual-hybrid">
-                        <WebMockup src={project.images.web} />
-                        <div className="hybrid-mobile-gallery">
-                          {project.images.mobile.map((mobSrc, idx) => (
-                            <MobileMockup key={idx} src={mobSrc} />
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                  
-                  <div className="project-info">
-                    <h3 className="project-title">{project.title}</h3>
-                    {renderTechBadges(project.tech)}
-                    <p className="project-desc">{project.description}</p>
-                    <div className="project-actions">
-                      <button 
-                        className="btn btn-text"
-                        onClick={() => setSelectedProject(project)}
-                      >
-                        Lihat Detail <i className="fas fa-arrow-right" style={{ marginLeft: '8px' }}></i>
-                      </button>
+                <div className="project-visuals">
+                  {project.type === 'mobile' && (
+                    <div className="visual-center">
+                      <MobileMockup src={project.images[0]} />
                     </div>
+                  )}
+                  {project.type === 'web' && (
+                    <div className="visual-center">
+                      <WebMockup src={project.images[0]} />
+                    </div>
+                  )}
+                  {project.type === 'hybrid' && (
+                    <div className="visual-hybrid">
+                      <WebMockup src={project.images.web} />
+                      <div className="hybrid-mobile-gallery">
+                        {project.images.mobile.map((mobSrc, idx) => (
+                          <MobileMockup key={idx} src={mobSrc} />
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+                
+                <div className="project-info">
+                  <h3 className="project-title">{project.title}</h3>
+                  {renderTechBadges(project.tech)}
+                  <p className="project-desc">{project.description}</p>
+                  <div className="project-actions">
+                    <button 
+                      className="btn btn-text"
+                      onClick={() => setSelectedProject(project)}
+                    >
+                      Lihat Detail <i className="fas fa-arrow-right" style={{ marginLeft: '8px' }}></i>
+                    </button>
                   </div>
-                </motion.div>
-              </Tilt>
+                </div>
+              </motion.div>
             ))}
           </motion.div>
         </AnimatePresence>

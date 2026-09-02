@@ -73,15 +73,16 @@ const Experience = () => {
                         className="gallery-image-wrapper"
                         initial={{ opacity: 0, scale: 0.8, x: 50 }}
                         animate={{ 
-                          opacity: 1 - (offset * 0.2), 
-                          scale: 1 - (offset * 0.05),
-                          x: offset * 15,
-                          y: offset * 15,
+                          opacity: 1 - (offset * 0.15), 
+                          scale: 1,
+                          x: offset * 35,
+                          y: offset * -15,
+                          rotate: offset * 4,
                           zIndex: images.length - offset
                         }}
-                        exit={{ opacity: 0, scale: 0.8, x: -50 }}
-                        transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-                        whileHover={offset === 0 ? { scale: 1.02 } : {}}
+                        exit={{ opacity: 0, scale: 0.8, x: -50, rotate: -10 }}
+                        transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                        whileHover={offset === 0 ? { scale: 1.05, y: -5 } : {}}
                       >
                         <img src={img} alt={`Magang ${index + 1}`} loading="lazy" />
                       </motion.div>

@@ -33,41 +33,29 @@ const Certificates = () => {
 
         <div className="certs-grid">
           {certData.map((cert, index) => (
-            <Tilt
+            <motion.div 
               key={cert.id}
-              tiltMaxAngleX={15}
-              tiltMaxAngleY={15}
-              perspective={1000}
-              scale={1.05}
-              transitionSpeed={2000}
-              glareEnable={true}
-              glareMaxOpacity={0.2}
-              glareColor="#ffffff"
-              glarePosition="all"
+              className="cert-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              onClick={() => setSelectedCert(cert)}
               style={{ height: '100%' }}
+              whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}
             >
-              <motion.div 
-                className="cert-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                onClick={() => setSelectedCert(cert)}
-                style={{ height: '100%' }}
-              >
-                <div className="cert-img-wrapper">
-                  <img src={cert.img} alt={cert.title} loading="lazy" />
-                  <div className="cert-overlay">
-                    <i className="fas fa-search-plus"></i>
-                  </div>
+              <div className="cert-img-wrapper">
+                <img src={cert.img} alt={cert.title} loading="lazy" />
+                <div className="cert-overlay">
+                  <i className="fas fa-search-plus"></i>
                 </div>
-                <div className="cert-info">
-                  <h3>{cert.title}</h3>
-                  <h4>{cert.issuer}</h4>
-                  <span className="cert-date">{cert.date}</span>
-                </div>
-              </motion.div>
-            </Tilt>
+              </div>
+              <div className="cert-info">
+                <h3>{cert.title}</h3>
+                <h4>{cert.issuer}</h4>
+                <span className="cert-date">{cert.date}</span>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

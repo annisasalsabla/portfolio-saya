@@ -105,26 +105,49 @@
   z-index: 1;
 }
 
-/* Massive glowing blob behind the image */
+/* Massive glowing orbs behind the image */
 .hero-blob {
   position: absolute;
-  width: 90%;
-  height: 90%;
-  right: 5%;
-  top: 5%;
-  background-color: var(--accent-secondary);
-  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-  animation: blob-morph 8s ease-in-out infinite alternate;
+  width: 100%;
+  height: 100%;
+  right: 0%;
+  top: 0%;
   z-index: -1;
-  opacity: 0.8;
-  filter: blur(10px);
-  box-shadow: 0 0 60px var(--accent-secondary);
 }
 
-/* Make blob darker/glowier based on theme */
-[data-theme="dark"] .hero-blob {
-  opacity: 0.4;
-  filter: blur(20px);
+.hero-blob::before,
+.hero-blob::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: orb-float 10s ease-in-out infinite alternate;
+  opacity: 0.8;
+}
+
+.hero-blob::before {
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 0%;
+  background: var(--accent-primary);
+  animation-delay: -5s;
+}
+
+.hero-blob::after {
+  width: 70%;
+  height: 70%;
+  bottom: 0%;
+  right: 0%;
+  background: var(--accent-secondary);
+  filter: blur(90px);
+}
+
+/* Make orbs darker/glowier based on theme */
+[data-theme="dark"] .hero-blob::before,
+[data-theme="dark"] .hero-blob::after {
+  opacity: 0.5;
+  filter: blur(100px);
 }
 
 .image-frame-cutout {
@@ -132,9 +155,7 @@
   width: 100%;
   max-width: 320px;
   z-index: 2;
-  /* if the user uploads a PNG, this acts as the cutout. 
-     For the current JPG with white background, we might use mix-blend-mode if needed, 
-     but let's just let it display normally for now until they upload a PNG */
+  margin-right: 2rem; /* Shift slightly left */
 }
 
 .image-frame-cutout img {
@@ -146,15 +167,10 @@
 }
 
 /* Animations */
-@keyframes blob-morph {
-  0% {
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-    transform: scale(1) rotate(0deg);
-  }
-  100% {
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    transform: scale(1.05) rotate(5deg);
-  }
+@keyframes orb-float {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-5%, 5%) scale(1.05); }
+  100% { transform: translate(5%, -5%) scale(0.95); }
 }
 
 .floating-animation {
