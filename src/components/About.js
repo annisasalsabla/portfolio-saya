@@ -28,7 +28,7 @@ const About = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           <span className="about-label">TENTANG SAYA</span>
-          <h2 className="about-headline">Web/Mobile Developer. Tech Enthusiast.</h2>
+          <h2 className="about-headline">Web/Mobile Developer.<br />Tech Enthusiast.</h2>
         </motion.div>
 
         <motion.div 
