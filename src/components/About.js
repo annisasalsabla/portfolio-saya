@@ -80,24 +80,22 @@ const About = () => {
           </div>
 
           <p>
-            I am Annisa Salsabila, a fresh graduate in Informatics Management from Politeknik Negeri Padang. 
-            Throughout my studies, I developed a genuine passion for building software — not just as an academic exercise, 
-            but as a way to solve real problems. My focus has been on web and mobile development, 
-            working across the full stack from database architecture to frontend interfaces.
+            I am Annisa Salsabila, a D3 Informatics Management graduate from Politeknik Negeri Padang.
+            I have a strong interest in IT, particularly in the development of web-based systems and mobile applications.
+            My technical background, combined with an analytical mindset, allows me to approach problems
+            thoughtfully and deliver solutions that are both functional and well-structured.
           </p>
           <p>
-            I am comfortable working with frameworks like Laravel and React for web systems, 
-            and Flutter for cross-platform mobile applications. During my time as a student, 
-            I had the opportunity to build end-to-end projects — including an inventory and 
-            sales management system, a hospital queue system, and a geographic information system 
-            for tourism — all developed to address real-world use cases, not just classroom assignments.
+            I have a solid foundation in web and mobile application development, covering both the
+            frontend and backend sides of a system. I am capable of working through the full development
+            cycle — from planning and database design all the way to building and integrating the final product.
+            These skills allow me to contribute meaningfully to digital projects that require reliable and scalable solutions.
           </p>
           <p>
-            My internship at PT Rapier Technology International gave me hands-on exposure to 
-            professional software development. I contributed to building REST APIs for a POS system, 
-            collaborating with a cross-functional team of developers, business analysts, and QA engineers. 
-            That experience sharpened my understanding of clean architecture, API design, and how 
-            software teams operate in a real production environment.
+            Throughout my studies, I was actively involved in various real-world projects and an industry internship,
+            which gave me practical exposure to how software is built and delivered in a professional setting.
+            Those experiences strengthened my ability to work in a team, tackle technical challenges, and think
+            critically when designing digital systems — skills I carry into every project I take on.
           </p>
           <p className="resume-prompt">
             Want to know more about my experience? <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="resume-link">Download my CV</a>
