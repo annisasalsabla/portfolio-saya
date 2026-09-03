@@ -31,28 +31,29 @@
 
     <!-- Google Translate Widget -->
     <style>
-      /* Hide the default Google Translate toolbar/banner */
-      .goog-te-banner-frame,
-      .skiptranslate { display: none !important; }
-      body { top: 0 !important; }
+      /* Suppress the default Google Translate top banner */
+      .goog-te-banner-frame { display: none !important; }
+      .skiptranslate         { display: none !important; }
+      body                   { top: 0 !important; }
 
-      /* Style the hidden translate element container */
-      #google_translate_element { display: none; }
-
-      /* Remove ugly Google iframe bar on mobile */
-      .goog-te-gadget { font-size: 0 !important; }
-      .goog-te-gadget .goog-te-combo {
-        font-size: 0.85rem !important;
-        padding: 4px 8px;
-        border-radius: 8px;
-        border: none;
-        background: transparent;
-        color: inherit;
-        cursor: pointer;
+      /* 
+        IMPORTANT: Do NOT use display:none here — it stops Google
+        from rendering the <select> that we need to trigger.
+        Instead push it far off-screen so it's invisible but still rendered.
+      */
+      #google_translate_element {
+        position: fixed;
+        bottom: -9999px;
+        left:   -9999px;
+        visibility: hidden;
+        pointer-events: none;
+        z-index: -1;
       }
 
-      /* Remove "Powered by Google" text */
-      .goog-logo-link, .goog-te-gadget span { display: none !important; }
+      /* Hide Google branding inside the widget */
+      .goog-logo-link             { display: none !important; }
+      .goog-te-gadget > span      { display: none !important; }
+      .goog-te-gadget             { font-size: 0 !important; }
     </style>
   </head>
   <body>

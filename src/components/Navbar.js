@@ -75,36 +75,60 @@ const Navbar = () => {
 
   // Trigger Google Translate to switch language
   const translatePage = (langCode) => {
-    const lang = languages.find(l => l.code === langCode) || { code: langCode, label: langCode.toUpperCase(), flag: '🌐' };
-    setCurrentLang({ ...lang, label: lang.code === 'en' ? 'EN' : lang.code.split('-')[0].toUpperCase() });
+    const lang = languages.find(l => l.code === langCode);
     setShowLangMenu(false);
 
+    // Update label display
+    if (lang) {
+      setCurrentLang({
+        ...lang,
+        label: lang.code === 'en' ? 'EN' : lang.code.split('-')[0].toUpperCase()
+      });
+    }
+
+    // ---- Restore English ----
     if (langCode === 'en') {
-      // Restore original English — reload without hash to reset translation
-      const googleCookie = document.cookie
-        .split('; ')
-        .find(row => row.startsWith('googtrans'));
-      if (googleCookie) {
-        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + window.location.hostname;
-      }
+      // Clear the googtrans cookie on all relevant paths/domains
+      const clearCookie = (name, path, domain) => {
+        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:01 UTC; path=${path};` +
+          (domain ? ` domain=${domain};` : '');
+      };
+      clearCookie('googtrans', '/', '');
+      clearCookie('googtrans', '/', '.' + window.location.hostname);
+      clearCookie('googtrans', '/', window.location.hostname);
       window.location.reload();
       return;
     }
 
-    // Set cookie and reload (Google Translate detects this)
-    const cookieValue = '/en/' + langCode;
-    document.cookie = 'googtrans=' + cookieValue + '; path=/';
-    document.cookie = 'googtrans=' + cookieValue + '; path=/; domain=' + window.location.hostname;
+    // ---- Translate via the hidden Google select ----
+    const doTranslate = () => {
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = langCode;
+        // Fire multiple events — some browsers need one, some need another
+        ['change', 'input'].forEach(evt =>
+          select.dispatchEvent(new Event(evt, { bubbles: true }))
+        );
+        return true;
+      }
+      return false;
+    };
 
-    // Use the hidden select element from Google Translate widget
-    const select = document.querySelector('.goog-te-combo');
-    if (select) {
-      select.value = langCode;
-      select.dispatchEvent(new Event('change'));
-    } else {
-      // Fallback: reload with cookie
-      window.location.reload();
+    // Try immediately, then retry with backoff, then cookie-reload fallback
+    if (!doTranslate()) {
+      let attempts = 0;
+      const retry = setInterval(() => {
+        attempts++;
+        if (doTranslate() || attempts >= 8) {
+          clearInterval(retry);
+          if (attempts >= 8) {
+            // Final fallback: set cookie and reload (works on all browsers)
+            document.cookie = `googtrans=/en/${langCode}; path=/`;
+            document.cookie = `googtrans=/en/${langCode}; path=/; domain=.${window.location.hostname}`;
+            window.location.reload();
+          }
+        }
+      }, 400);
     }
   };
 
