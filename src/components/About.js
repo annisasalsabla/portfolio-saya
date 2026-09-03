@@ -1,6 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './About.css';
+
+const phrases = [
+  "Tech Enthusiast.",
+  "Web & Mobile Developer.",
+  "Problem Solver.",
+  "Full-Stack Enthusiast."
+];
+
+const TypewriterHeadline = () => {
+  const [textIndex, setTextIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentPhrase = phrases[textIndex];
+    const typingSpeed = isDeleting ? 35 : 75;
+
+    if (!isDeleting && charIndex === currentPhrase.length) {
+      const timeout = setTimeout(() => setIsDeleting(true), 2200);
+      return () => clearTimeout(timeout);
+    } else if (isDeleting && charIndex === 0) {
+      setIsDeleting(false);
+      setTextIndex((prev) => (prev + 1) % phrases.length);
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setCharIndex((prev) => prev + (isDeleting ? -1 : 1));
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [charIndex, isDeleting, textIndex]);
+
+  return (
+    <h2 className="about-headline">
+      Software Developer.<br />
+      <span className="typewriter-text">{phrases[textIndex].substring(0, charIndex)}</span>
+      <span className="typing-cursor">|</span>
+    </h2>
+  );
+};
 
 const About = () => {
   const scrollVariants = {
@@ -15,7 +56,7 @@ const About = () => {
         <motion.div className="about-headline-wrapper" variants={scrollVariants}
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}>
           <span className="about-label">TENTANG SAYA</span>
-          <h2 className="about-headline">Software Developer.<br />Tech Enthusiast.</h2>
+          <TypewriterHeadline />
         </motion.div>
 
         <motion.div className="about-profile-row" variants={scrollVariants}
