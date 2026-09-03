@@ -28,86 +28,86 @@ const Projects = () => {
     web: [
       {
         id: 'sik-pnp',
-        title: 'SIK PNP - Sistem Informasi Kuesioner',
-        description: 'Sistem informasi kuesioner Politeknik Negeri Padang yang dikembangkan menggunakan PHP dengan dukungan HTML, CSS, dan JavaScript untuk memudahkan pengelolaan dan pengisian kuesioner.',
+        title: 'SIK PNP - Questionnaire Information System',
+        description: 'A questionnaire information system for Politeknik Negeri Padang developed using PHP with HTML, CSS, and JavaScript support, designed to simplify questionnaire management and submission.',
         type: 'web',
         images: ['/images/web1.png'],
         tech: ['PHP', 'MySQL', 'HTML5', 'CSS3', 'JavaScript'],
         features: [
-          'Manajemen data kuesioner',
-          'Pengisian kuesioner online',
-          'Generate laporan otomatis',
+          'Questionnaire data management',
+          'Online questionnaire submission',
+          'Automatic report generation',
           'Multi-user access system',
-          'Dashboard admin'
+          'Admin dashboard'
         ]
       },
       {
         id: 'wisata-padang',
-        title: 'Website Wisata Kota Padang',
-        description: 'Website wisata dengan Sistem Informasi Geografis (SIG) untuk menampilkan lokasi wisata pada peta secara interaktif.',
+        title: 'Padang City Tourism Website',
+        description: 'A tourism website with a Geographic Information System (GIS) to display tourist locations interactively on a map.',
         type: 'web',
         images: ['/images/web2.png'],
         tech: ['PHP', 'JavaScript', 'Google Maps API', 'HTML5', 'CSS3'],
         features: [
-          'Peta wisata interaktif',
-          'Informasi detail lokasi',
-          'Kategori wisata',
+          'Interactive tourism map',
+          'Detailed location information',
+          'Tourism categories',
           'Search & filter',
           'Responsive design'
         ]
       },
       {
         id: 'rs-antrian',
-        title: 'Sistem Antrian RS Annisa',
-        description: 'Sistem antrian digital rumah sakit yang dikembangkan menggunakan Laravel untuk mempermudah proses pendaftaran pasien dan monitoring pelayanan.',
+        title: 'RS Annisa Queue System',
+        description: 'A digital hospital queue system developed using Laravel to simplify patient registration and service monitoring processes.',
         type: 'web',
         images: ['/images/web3.png'],
         tech: ['Laravel', 'MySQL', 'Bootstrap', 'JavaScript', 'jQuery'],
         features: [
-          'Pendaftaran pasien online',
-          'Manajemen antrian real-time',
-          'Dashboard admin & petugas',
-          'Laporan harian',
-          'Notifikasi antrian'
+          'Online patient registration',
+          'Real-time queue management',
+          'Admin & staff dashboard',
+          'Daily reports',
+          'Queue notifications'
         ]
       }
     ],
     aplikasi: [
       {
         id: 'ta',
-        title: "Sistem Manajemen Inventory & Penjualan (TA)",
-        description: "Aplikasi mobile manajemen inventory & penjualan toko grosir dengan 3 role (Admin, Owner, Kasir), dashboard ringkasan penjualan, grafik mingguan, dan monitoring stok masuk-keluar.",
+        title: "Inventory & Sales Management System (Final Project)",
+        description: "A mobile inventory & sales management application for a wholesale store with 3 roles (Admin, Owner, Cashier), a sales summary dashboard, weekly charts, and stock monitoring.",
         type: "mobile",
         images: ["/images/projekta.png"],
         tech: ["Flutter", "Laravel", "MySQL", "REST API"],
         features: [
-          'Sistem 3 Role (Admin, Owner, Kasir)',
-          'Frontend dikembangkan dengan Flutter',
-          'Backend REST API dikembangkan dengan Laravel',
-          'Dashboard ringkasan penjualan & laba',
-          'Monitoring stok barang masuk-keluar',
-          'Grafik penjualan mingguan'
+          '3-Role System (Admin, Owner, Cashier)',
+          'Frontend built with Flutter',
+          'Backend REST API built with Laravel',
+          'Sales & profit summary dashboard',
+          'Incoming/outgoing stock monitoring',
+          'Weekly sales charts'
         ]
       },
       {
         id: 'yummy',
         title: 'YUMMY - Food Explorer App',
-        description: 'Aplikasi mobile makanan yang dikembangkan menggunakan Flutter untuk menjelajahi makanan, melihat bahan-bahan, dan mengetahui lokasi makanan di peta.',
+        description: 'A mobile food application built with Flutter to explore foods, view ingredients, and find food locations on a map.',
         type: 'mobile',
         images: ['/images/mobile1.png'],
         tech: ['Flutter', 'Dart', 'Android Studio', 'Google Maps API'],
         features: [
-          'Explorasi berbagai makanan',
-          'Detail bahan dan resep',
-          'Lokasi makanan di peta',
-          'UI modern dan clean',
+          'Explore various foods',
+          'Ingredient and recipe details',
+          'Food locations on the map',
+          'Modern and clean UI',
           'Favorite system'
         ]
       },
       {
         id: 'campus',
         title: 'Campus Explorer App',
-        description: 'Aplikasi explorer kampus dengan Flutter frontend yang terhubung ke Lumen REST API, mendukung fungsi CRUD lengkap dan integrasi Google Maps API.',
+        description: 'A campus explorer app with a Flutter frontend connected to a Lumen REST API, supporting full CRUD operations and Google Maps API integration.',
         type: 'mobile',
         images: ['/images/mobile2.png'],
         tech: ['Flutter', 'Dart', 'Lumen API', 'REST API', 'Google Maps'],
@@ -122,7 +122,7 @@ const Projects = () => {
       {
         id: 'clinic',
         title: 'Clinic App - Doctor Appointment',
-        description: 'Prototipe antarmuka pengguna untuk aplikasi kesehatan mobile bernama Self Care, dirancang menggunakan Android Studio dengan Kotlin.',
+        description: 'A user interface prototype for a mobile health application called Self Care, designed using Android Studio with Kotlin.',
         type: 'mobile',
         images: ['/images/mobile3.png'],
         tech: ['Kotlin', 'Android Studio', 'XML', 'Material Design'],
@@ -138,31 +138,31 @@ const Projects = () => {
     magang: [
       {
         id: 'haloemas',
-        title: "Sistem Informasi POS-HALOEMAS",
-        description: "Pengembangan REST API backend untuk sistem POS — perancangan endpoint, integrasi data, optimasi komunikasi backend-frontend.",
+        title: "POS-HALOEMAS Information System",
+        description: "Backend REST API development for a POS system — endpoint design, data integration, backend-frontend communication optimization.",
         type: "web",
         images: ["/images/apihaloemas.png"],
         tech: ["Laravel", "REST API", "PostgreSQL", "PHP"],
         features: [
-          'Perancangan endpoint REST API',
-          'Integrasi data backend & frontend',
-          'Optimasi performa query database',
-          'Dokumentasi teknis API',
-          'Manajemen pengguna & transaksi'
+          'REST API endpoint design',
+          'Backend & frontend data integration',
+          'Database query performance optimization',
+          'API technical documentation',
+          'User & transaction management'
         ]
       },
       {
         id: 'easywarehouse',
-        title: "Sistem Informasi Easy Warehouse",
-        description: "Backend REST API untuk sistem manajemen gudang (warehouse), pengelolaan data inventaris.",
+        title: "Easy Warehouse Information System",
+        description: "Backend REST API for a warehouse management system, handling inventory data management.",
         type: "web",
         images: ["/images/apiaesywarehouse.png"],
         tech: ["Laravel", "REST API", "MySQL"],
         features: [
-          'Pengelolaan data barang masuk/keluar',
-          'Integrasi API manajemen gudang',
-          'Laporan inventaris otomatis',
-          'Sistem pencatatan real-time'
+          'Incoming/outgoing goods management',
+          'Warehouse management API integration',
+          'Automatic inventory reports',
+          'Real-time record-keeping system'
         ]
       }
     ]
@@ -204,8 +204,8 @@ const Projects = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title">Projek Terselesaikan</h2>
-          <p className="section-subtitle">Studi kasus dan implementasi sistem nyata yang pernah saya bangun.</p>
+          <h2 className="section-title">Completed Projects</h2>
+          <p className="section-subtitle">Case studies and real system implementations I have built.</p>
         </motion.div>
 
         {/* Tabs Filter */}
@@ -214,19 +214,19 @@ const Projects = () => {
             className={`tab-btn ${activeCategory === 'web' ? 'active' : ''}`}
             onClick={() => setActiveCategory('web')}
           >
-            Projek Web
+            Web Projects
           </button>
           <button 
             className={`tab-btn ${activeCategory === 'aplikasi' ? 'active' : ''}`}
             onClick={() => setActiveCategory('aplikasi')}
           >
-            Projek Aplikasi
+            App Projects
           </button>
           <button 
             className={`tab-btn ${activeCategory === 'magang' ? 'active' : ''}`}
             onClick={() => setActiveCategory('magang')}
           >
-            Projek Magang
+            Internship Projects
           </button>
         </div>
 
@@ -280,7 +280,7 @@ const Projects = () => {
                       className="btn btn-text"
                       onClick={() => setSelectedProject(project)}
                     >
-                      Lihat Detail <i className="fas fa-arrow-right" style={{ marginLeft: '8px' }}></i>
+                      View Details <i className="fas fa-arrow-right" style={{ marginLeft: '8px' }}></i>
                     </button>
                   </div>
                 </div>
@@ -340,7 +340,7 @@ const Projects = () => {
                   </div>
                   <p className="modal-desc">{selectedProject.description}</p>
                   
-                  <h4 className="modal-subtitle">Fitur Utama:</h4>
+                  <h4 className="modal-subtitle">Key Features:</h4>
                   <ul className="modal-features">
                     {selectedProject.features.map((feature, idx) => (
                       <li key={idx}>{feature}</li>
@@ -348,7 +348,7 @@ const Projects = () => {
                   </ul>
                   
                   <div className="modal-btn-actions">
-                    <button className="btn btn-primary" onClick={() => setSelectedProject(null)}>Tutup</button>
+                    <button className="btn btn-primary" onClick={() => setSelectedProject(null)}>Close</button>
                   </div>
                 </div>
               </div>

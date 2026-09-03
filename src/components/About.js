@@ -27,8 +27,8 @@ const About = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <span className="about-label">TENTANG SAYA</span>
-          <h2 className="about-headline">Web/Mobile Developer.<br />Tech Enthusiast.</h2>
+          <span className="about-label">ABOUT ME</span>
+          <h2 className="about-headline">Software Developer.<br />Tech Enthusiast.</h2>
         </motion.div>
 
         <motion.div 
@@ -48,15 +48,15 @@ const About = () => {
             </div>
             <div className="profile-stats">
               <div className="stat-item">
-                <span className="stat-label">PROJEK</span>
+                <span className="stat-label">PROJECTS</span>
                 <span className="stat-value">15+</span>
               </div>
               <div className="stat-item">
-                <span className="stat-label">SERTIFIKAT</span>
+                <span className="stat-label">CERTIFICATES</span>
                 <span className="stat-value">10+</span>
               </div>
               <div className="stat-item">
-                <span className="stat-label">LULUS</span>
+                <span className="stat-label">GRADUATED</span>
                 <span className="stat-value">2026</span>
               </div>
             </div>
@@ -71,10 +71,10 @@ const About = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           <p>
-            Lulusan D3 Teknologi Informasi Politeknik Negeri Padang dengan ketertarikan pada bidang IT. Memiliki pengalaman langsung di bidang IT, khususnya pengembangan sistem berbasis web dan aplikasi. Terbiasa mengerjakan proyek end-to-end menggunakan Laravel, React, Flutter dan bahasa pemrograman lainnya mulai dari perancangan database hingga integrasi sistem. Memiliki rasa ingin tahu tinggi, cepat beradaptasi dengan teknologi baru, dan siap berkontribusi penuh semangat di tim IT mana pun.
+            D3 graduate in Information Technology from Politeknik Negeri Padang with a strong interest in IT. I have hands-on experience in IT, particularly in web and mobile application development. Skilled in end-to-end project delivery using Laravel, React, Flutter, and other programming languages — from database design to system integration. I am highly curious, quick to adapt to new technologies, and ready to contribute enthusiastically to any IT team.
           </p>
           <p className="resume-prompt">
-            Ingin tahu lebih lanjut tentang pengalaman saya? <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="resume-link">Unduh CV saya</a>
+            Want to know more about my experience? <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="resume-link">Download my CV</a>
           </p>
         </motion.div>
 
@@ -85,27 +85,27 @@ const About = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <span className="currently-label">SAAT INI</span>
+          <span className="currently-label">CURRENTLY</span>
           <div className="currently-grid">
             <div className="currently-item">
               <i className="fas fa-code currently-icon"></i>
               <div className="currently-text">
-                <span className="currently-title">Membangun</span>
-                <span className="currently-desc">Projek Web & Mobile</span>
+                <span className="currently-title">Building</span>
+                <span className="currently-desc">Web &amp; Mobile Projects</span>
               </div>
             </div>
             <div className="currently-item">
               <i className="fas fa-flask currently-icon"></i>
               <div className="currently-text">
-                <span className="currently-title">Mengeksplorasi</span>
-                <span className="currently-desc">Optimasi Backend & API</span>
+                <span className="currently-title">Exploring</span>
+                <span className="currently-desc">Backend Optimization &amp; APIs</span>
               </div>
             </div>
             <div className="currently-item">
               <i className="fas fa-rocket currently-icon"></i>
               <div className="currently-text">
-                <span className="currently-title">Mempelajari</span>
-                <span className="currently-desc">Pengembangan Full-stack</span>
+                <span className="currently-title">Learning</span>
+                <span className="currently-desc">Full-stack Development</span>
               </div>
             </div>
           </div>

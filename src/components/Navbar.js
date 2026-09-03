@@ -3,14 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
 
 const navLinks = [
-  { id: 'home', label: 'Beranda' },
-  { id: 'about', label: 'Tentang' },
-  { id: 'education', label: 'Pendidikan' },
+  { id: 'home', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'education', label: 'Education' },
   { id: 'skills', label: 'Skills' },
-  { id: 'experience', label: 'Pengalaman' },
-  { id: 'projects', label: 'Projek' },
-  { id: 'certificates', label: 'Sertifikat' },
-  { id: 'contact', label: 'Kontak' }
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'certificates', label: 'Certificates' },
+  { id: 'contact', label: 'Contact' }
 ];
 
 const Navbar = () => {
@@ -100,7 +100,7 @@ const Navbar = () => {
     >
       <div className="container nav-container">
         <a href="#home" className="nav-logo" onClick={(e) => handleNavClick(e, 'home')}>
-          Portofolio
+          Portfolio
         </a>
 
         {/* Desktop Menu */}

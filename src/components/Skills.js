@@ -25,7 +25,7 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: "Bahasa & Teknologi",
+      title: "Languages & Technologies",
       skills: [
         { name: "Laravel", icon: <FaLaravel className="icon laravel" /> },
         { name: "React", icon: <FaReact className="icon react" /> },
@@ -73,8 +73,8 @@ const Skills = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title">Keahlian & Tools</h2>
-          <p className="section-subtitle">Teknologi dan perangkat yang saya gunakan untuk mewujudkan ide menjadi produk nyata.</p>
+          <h2 className="section-title">Skills &amp; Tools</h2>
+          <p className="section-subtitle">Technologies and tools I use to turn ideas into real products.</p>
         </motion.div>
 
         <div className="skills-container">

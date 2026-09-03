@@ -47,7 +47,7 @@ const Hero = () => {
           animate="visible"
         >
           <motion.p variants={itemVariants} className="hero-greeting">
-            Halo, nama saya
+            Hi, my name is
           </motion.p>
           
           <motion.h1 variants={itemVariants} className="hero-title">
@@ -55,7 +55,7 @@ const Hero = () => {
           </motion.h1>
           
           <motion.h2 variants={itemVariants} className="hero-subtitle">
-            Saya seorang <span className="text-secondary-accent">Web / Mobile Developer</span>
+            I am a <span className="text-secondary-accent">Software Developer</span>
           </motion.h2>
           
           <motion.div variants={itemVariants} className="hero-socials">
@@ -75,7 +75,7 @@ const Hero = () => {
           
           <motion.div variants={itemVariants} className="hero-actions">
             <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary">
-              UNDUH CV
+              DOWNLOAD CV
             </a>
           </motion.div>
         </motion.div>
@@ -87,6 +87,20 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
+          {/* Animated particle rings */}
+          <div className="hero-animated-bg">
+            <div className="ring ring-1"></div>
+            <div className="ring ring-2"></div>
+            <div className="ring ring-3"></div>
+            <div className="ring ring-4"></div>
+            <div className="particle p1"></div>
+            <div className="particle p2"></div>
+            <div className="particle p3"></div>
+            <div className="particle p4"></div>
+            <div className="particle p5"></div>
+            <div className="particle p6"></div>
+          </div>
+
           {/* Decorative Glow */}
           <div className="hero-glow">
             <div className="dot-matrix dot-matrix-1"></div>
