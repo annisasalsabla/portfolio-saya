@@ -9,6 +9,7 @@
   --accent-primary-hover: #a85423;
   --accent-secondary: #1B3A2B;
   --accent-secondary-hover: #142a20;
+  --accent-secondary-rgb: 27, 58, 43;
   
   /* Glass */
   --glass-bg: rgba(245, 240, 230, 0.85);
@@ -56,6 +57,7 @@
   --accent-primary-hover: #F4A261;
   --accent-secondary: #2DD4BF;
   --accent-secondary-hover: #14B8A6;
+  --accent-secondary-rgb: 45, 212, 191;
   
   --glass-bg: rgba(15, 23, 42, 0.85);
 

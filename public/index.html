@@ -28,9 +28,57 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Annisa Salsabila | Software Developer</title>
+
+    <!-- Google Translate Widget -->
+    <style>
+      /* Hide the default Google Translate toolbar/banner */
+      .goog-te-banner-frame,
+      .skiptranslate { display: none !important; }
+      body { top: 0 !important; }
+
+      /* Style the hidden translate element container */
+      #google_translate_element { display: none; }
+
+      /* Remove ugly Google iframe bar on mobile */
+      .goog-te-gadget { font-size: 0 !important; }
+      .goog-te-gadget .goog-te-combo {
+        font-size: 0.85rem !important;
+        padding: 4px 8px;
+        border-radius: 8px;
+        border: none;
+        background: transparent;
+        color: inherit;
+        cursor: pointer;
+      }
+
+      /* Remove "Powered by Google" text */
+      .goog-logo-link, .goog-te-gadget span { display: none !important; }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- Hidden Google Translate element (triggered by our custom button) -->
+    <div id="google_translate_element"></div>
+
     <div id="root"></div>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: 'en',
+            includedLanguages: 'id,en,ar,zh-CN,zh-TW,fr,de,ja,ko,ms,nl,pt,ru,es,th,vi',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+          },
+          'google_translate_element'
+        );
+      }
+    </script>
+    <script type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
   </body>
 </html>
