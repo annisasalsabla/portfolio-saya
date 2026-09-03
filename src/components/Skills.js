@@ -25,7 +25,7 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: "Languages & Technologies",
+      title: "Bahasa & Teknologi",
       skills: [
         { name: "Laravel", icon: <FaLaravel className="icon laravel" /> },
         { name: "React", icon: <FaReact className="icon react" /> },
@@ -41,7 +41,7 @@ const Skills = () => {
       ]
     },
     {
-      title: "Development Tools",
+      title: "Perangkat Pengembangan",
       skills: [
         { name: "VS Code", icon: <VscVscode className="icon vscode" /> },
         { name: "Git", icon: <FaGitAlt className="icon git" /> },
@@ -53,7 +53,7 @@ const Skills = () => {
       ]
     },
     {
-      title: "Office & Design",
+      title: "Perkantoran & Desain",
       skills: [
         { name: "Canva", image: "/images/canva.png" },
         { name: "Microsoft Word", image: "/images/msword.png" },
@@ -73,8 +73,8 @@ const Skills = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title">Skills &amp; Tools</h2>
-          <p className="section-subtitle">Technologies and tools I use to turn ideas into real products.</p>
+          <h2 className="section-title">Keahlian &amp; Tools</h2>
+          <p className="section-subtitle">Teknologi dan perangkat yang saya gunakan untuk mewujudkan ide menjadi produk nyata.</p>
         </motion.div>
 
         <div className="skills-container">

@@ -3,18 +3,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
 
 const navLinks = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'certificates', label: 'Certificates' },
-  { id: 'contact', label: 'Contact' }
+  { id: 'home',         label: 'Beranda' },
+  { id: 'about',        label: 'Tentang' },
+  { id: 'skills',       label: 'Keahlian' },
+  { id: 'experience',   label: 'Pengalaman' },
+  { id: 'projects',     label: 'Projek' },
+  { id: 'certificates', label: 'Sertifikat' },
+  { id: 'contact',      label: 'Kontak' }
 ];
 
 const languages = [
-  { code: 'en',    label: 'English',    flag: '🇺🇸' },
   { code: 'id',    label: 'Indonesia',  flag: '🇮🇩' },
+  { code: 'en',    label: 'English',    flag: '🇺🇸' },
   { code: 'ar',    label: 'العربية',    flag: '🇸🇦' },
   { code: 'zh-CN', label: '中文',        flag: '🇨🇳' },
   { code: 'fr',    label: 'Français',   flag: '🇫🇷' },
@@ -27,59 +27,60 @@ const languages = [
   { code: 'ru',    label: 'Русский',    flag: '🇷🇺' },
 ];
 
-// Helper: read a cookie value by name
+const DEFAULT_LANG = languages[0]; // Indonesia
+
+/* ── cookie helpers ─────────────────────────────────────── */
 const getCookie = (name) => {
-  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-  return match ? decodeURIComponent(match[2]) : null;
+  const m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  return m ? decodeURIComponent(m[2]) : null;
 };
 
-// Helper: set cookie on all relevant domains/paths
 const setGoogtrans = (value) => {
-  const host = window.location.hostname;
-  document.cookie = `googtrans=${value}; path=/`;
-  document.cookie = `googtrans=${value}; path=/; domain=.${host}`;
-  document.cookie = `googtrans=${value}; path=/; domain=${host}`;
+  const h = window.location.hostname;
+  document.cookie = `googtrans=${value}; path=/;`;
+  document.cookie = `googtrans=${value}; path=/; domain=.${h};`;
+  document.cookie = `googtrans=${value}; path=/; domain=${h};`;
 };
 
-// Helper: clear the googtrans cookie everywhere
 const clearGoogtrans = () => {
-  const host = window.location.hostname;
-  const expired = '; expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/';
-  document.cookie = `googtrans=${expired}`;
-  document.cookie = `googtrans=${expired}; domain=.${host}`;
-  document.cookie = `googtrans=${expired}; domain=${host}`;
+  const h = window.location.hostname;
+  const ex = '; expires=Thu, 01 Jan 1970 00:00:01 UTC; path=/;';
+  document.cookie = `googtrans=${ex}`;
+  document.cookie = `googtrans=${ex} domain=.${h};`;
+  document.cookie = `googtrans=${ex} domain=${h};`;
 };
+/* ─────────────────────────────────────────────────────────── */
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled]         = useState(false);
-  const [activeSection, setActiveSection]   = useState('home');
-  const [isMobileMenuOpen, setMobileOpen]   = useState(false);
-  const [theme, setTheme]                   = useState('light');
-  const [showLangMenu, setShowLangMenu]     = useState(false);
-  const [currentLang, setCurrentLang]       = useState(languages[0]); // default English
+  const [isScrolled, setIsScrolled]       = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+  const [isMobileMenuOpen, setMobileOpen] = useState(false);
+  const [theme, setTheme]                 = useState('light');
+  const [showLangMenu, setShowLangMenu]   = useState(false);
+  const [currentLang, setCurrentLang]     = useState(DEFAULT_LANG);
   const langMenuRef = useRef(null);
 
-  // ── On mount: read googtrans cookie to restore active language ──────────
+  /* Read googtrans cookie on mount to restore active language display */
   useEffect(() => {
-    const val = getCookie('googtrans'); // e.g. "/en/id"
+    const val = getCookie('googtrans'); // e.g. "/id/en"
     if (val) {
       const parts = val.split('/').filter(Boolean);
-      const targetCode = parts[parts.length - 1]; // "id"
-      const found = languages.find(l => l.code === targetCode);
+      const target = parts[parts.length - 1]; // "en"
+      const found = languages.find(l => l.code === target);
       if (found) setCurrentLang(found);
     }
   }, []);
 
-  // ── Theme initialization ────────────────────────────────────────────────
+  /* Theme */
   useEffect(() => {
-    const saved   = localStorage.getItem('portfolio-theme');
-    const dark    = window.matchMedia?.('(prefers-color-scheme: dark)').matches;
-    const theme   = saved || (dark ? 'dark' : 'light');
-    setTheme(theme);
-    document.documentElement.setAttribute('data-theme', theme);
+    const saved = localStorage.getItem('portfolio-theme');
+    const dark  = window.matchMedia?.('(prefers-color-scheme: dark)').matches;
+    const t     = saved || (dark ? 'dark' : 'light');
+    setTheme(t);
+    document.documentElement.setAttribute('data-theme', t);
   }, []);
 
-  // ── Close lang menu on outside click / tap ──────────────────────────────
+  /* Close lang dropdown on outside click */
   useEffect(() => {
     const close = (e) => {
       if (langMenuRef.current && !langMenuRef.current.contains(e.target))
@@ -100,39 +101,36 @@ const Navbar = () => {
     document.documentElement.setAttribute('data-theme', next);
   };
 
-  // ── Main translate function ─────────────────────────────────────────────
+  /* ── TRANSLATE — Works seamlessly on desktop & mobile ── */
   const translatePage = (langCode) => {
     setShowLangMenu(false);
     const lang = languages.find(l => l.code === langCode);
+    if (lang) setCurrentLang(lang); // update UI immediately
 
-    // Update UI immediately so the checkmark moves right away
-    if (lang) setCurrentLang(lang);
-
-    // ── Restore English ──
-    if (langCode === 'en') {
+    if (langCode === 'id') {
       clearGoogtrans();
-      window.location.reload();
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = 'id';
+        select.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+      setTimeout(() => window.location.reload(), 150);
       return;
     }
 
-    // ── Strategy 1: use the hidden <select> for instant (no-reload) translation
+    setGoogtrans(`/id/${langCode}`);
+
     const select = document.querySelector('.goog-te-combo');
     if (select) {
       select.value = langCode;
-      ['change', 'input'].forEach(evt =>
-        select.dispatchEvent(new Event(evt, { bubbles: true }))
-      );
-      // Also persist via cookie so a manual refresh keeps the language
-      setGoogtrans(`/en/${langCode}`);
-      return;
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+      select.dispatchEvent(new Event('input', { bubbles: true }));
+    } else {
+      window.location.reload();
     }
-
-    // ── Strategy 2 (fallback): set cookie + reload (100% reliable, all browsers)
-    setGoogtrans(`/en/${langCode}`);
-    window.location.reload();
   };
 
-  // ── Scroll handler ──────────────────────────────────────────────────────
+  /* Scroll tracking */
   useEffect(() => {
     const onScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -152,8 +150,7 @@ const Navbar = () => {
     const scroll = () => {
       const el = document.getElementById(id);
       if (el) {
-        const top = el.getBoundingClientRect().top + window.pageYOffset - 80;
-        window.scrollTo({ top, behavior: 'smooth' });
+        window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' });
         window.history.pushState(null, '', `#${id}`);
       }
     };
@@ -161,17 +158,17 @@ const Navbar = () => {
     else scroll();
   };
 
-  // ── Translate dropdown (shared between desktop & mobile) ────────────────
+  /* Shared translate dropdown */
   const TranslateBtn = ({ className = '' }) => (
     <div className={`translate-wrapper ${className}`} ref={langMenuRef}>
       <button
         className="translate-btn"
         onClick={() => setShowLangMenu(p => !p)}
-        aria-label="Translate page"
-        title="Translate page"
+        aria-label="Ubah bahasa"
+        title="Ubah bahasa"
       >
         <span className="translate-globe">🌐</span>
-        <span className="translate-label">{currentLang.code === 'en' ? 'EN' : currentLang.code.split('-')[0].toUpperCase()}</span>
+        <span className="translate-label">{currentLang.code === 'id' ? 'ID' : currentLang.code.split('-')[0].toUpperCase()}</span>
         <i className={`fas fa-chevron-${showLangMenu ? 'up' : 'down'} translate-chevron`}></i>
       </button>
 
@@ -184,7 +181,7 @@ const Navbar = () => {
             exit={{ opacity: 0, y: -8, scale: 0.95 }}
             transition={{ duration: 0.18 }}
           >
-            <div className="lang-dropdown-header">Translate page</div>
+            <div className="lang-dropdown-header">Terjemahkan halaman</div>
             {languages.map(lang => (
               <button
                 key={lang.code}
@@ -213,10 +210,10 @@ const Navbar = () => {
     >
       <div className="container nav-container">
         <a href="#home" className="nav-logo" onClick={(e) => handleNavClick(e, 'home')}>
-          Portfolio
+          Portofolio
         </a>
 
-        {/* Desktop links */}
+        {/* Desktop */}
         <div className="nav-links-desktop">
           {navLinks.map(link => (
             <a
@@ -227,67 +224,40 @@ const Navbar = () => {
             >
               {link.label}
               {activeSection === link.id && (
-                <motion.div
-                  className="nav-indicator"
-                  layoutId="activeSection"
-                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                />
+                <motion.div className="nav-indicator" layoutId="activeSection"
+                  transition={{ type: 'spring', stiffness: 300, damping: 30 }} />
               )}
             </a>
           ))}
-
           <TranslateBtn />
-
-          <button
-            className="theme-toggle-btn"
-            onClick={toggleTheme}
-            aria-label="Toggle Theme"
-            style={{ background: 'transparent', border: 'none', color: 'var(--text-main)', fontSize: '1.2rem', cursor: 'pointer', marginLeft: '0.25rem' }}
-          >
+          <button className="theme-toggle-btn" onClick={toggleTheme} aria-label="Ganti tema"
+            style={{ background: 'transparent', border: 'none', color: 'var(--text-main)', fontSize: '1.2rem', cursor: 'pointer', marginLeft: '0.25rem' }}>
             <i className={theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'}></i>
           </button>
         </div>
 
-        {/* Mobile: translate + theme + hamburger */}
+        {/* Mobile */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }} className="mobile-actions">
           <TranslateBtn className="mobile-only" />
-
-          <button
-            className="theme-toggle-btn mobile-only"
-            onClick={toggleTheme}
-            aria-label="Toggle Theme"
-            style={{ background: 'transparent', border: 'none', color: 'var(--text-main)', fontSize: '1.2rem', cursor: 'pointer' }}
-          >
+          <button className="theme-toggle-btn mobile-only" onClick={toggleTheme} aria-label="Ganti tema"
+            style={{ background: 'transparent', border: 'none', color: 'var(--text-main)', fontSize: '1.2rem', cursor: 'pointer' }}>
             <i className={theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'}></i>
           </button>
-
-          <button
-            className="mobile-toggle"
-            onClick={() => setMobileOpen(o => !o)}
-            aria-label="Toggle Menu"
-          >
+          <button className="mobile-toggle" onClick={() => setMobileOpen(o => !o)} aria-label="Buka menu">
             <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
-            className="mobile-menu glass"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
+          <motion.div className="mobile-menu glass"
+            initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }}>
             {navLinks.map(link => (
-              <a
-                key={link.id}
-                href={`#${link.id}`}
+              <a key={link.id} href={`#${link.id}`}
                 className={`mobile-link ${activeSection === link.id ? 'active' : ''}`}
-                onClick={(e) => handleNavClick(e, link.id)}
-              >
+                onClick={(e) => handleNavClick(e, link.id)}>
                 {link.label}
               </a>
             ))}

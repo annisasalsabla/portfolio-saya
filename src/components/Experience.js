@@ -36,7 +36,7 @@ const Experience = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title">Work Experience</h2>
+          <h2 className="section-title">Pengalaman Kerja</h2>
         </motion.div>
 
         <div className="timeline">
@@ -50,15 +50,15 @@ const Experience = () => {
             <div className="timeline-dot"></div>
             <div className="timeline-content glass-card">
               <div className="timeline-header">
-                <h3 className="timeline-role">Backend Developer / IT Programmer (Intern)</h3>
-                <span className="timeline-date">February 2026 – May 2026</span>
+                <h3 className="timeline-role">Backend Developer / IT Programmer (Magang)</h3>
+                <span className="timeline-date">Februari 2026 – Mei 2026</span>
               </div>
-              <h4 className="timeline-company">PT Rapier Technology International — Tangerang, Banten</h4>
+              <h4 className="timeline-company">PT Rapier Technology International — Kota Tangerang, Banten</h4>
               <p className="timeline-desc">
-                Completed a Field Work Practicum (PKL) as an Intern Backend Developer in the Development division. Responsible for developing REST APIs for the POS-HALOEMAS Information System, including endpoint design, data integration, and optimizing communication flow between the backend and frontend. Collaborated with developers, business analysts, and QA engineers in a client-driven software development cycle.
+                Menjalani Praktik Kerja Lapangan (PKL) sebagai Intern Backend Developer di divisi Development. Bertanggung jawab dalam pengembangan REST API untuk Sistem Informasi POS-HALOEMAS, mencakup perancangan endpoint, integrasi data, dan optimasi alur komunikasi antara backend dan frontend. Berkolaborasi dengan tim developer, business analyst, dan QA dalam siklus pengembangan software berbasis kebutuhan klien.
               </p>
               
-              <div className="experience-gallery" onClick={handleNextImage} title="Click to see next image">
+              <div className="experience-gallery" onClick={handleNextImage} title="Klik untuk melihat gambar selanjutnya">
                 <AnimatePresence mode="popLayout">
                   {images.map((img, index) => {
                     // Calculate offset relative to topIndex
@@ -84,13 +84,13 @@ const Experience = () => {
                         transition={{ type: 'spring', stiffness: 200, damping: 20 }}
                         whileHover={offset === 0 ? { scale: 1.05, y: -5 } : {}}
                       >
-                        <img src={img} alt={`Internship ${index + 1}`} loading="lazy" />
+                        <img src={img} alt={`Magang ${index + 1}`} loading="lazy" />
                       </motion.div>
                     );
                   })}
                 </AnimatePresence>
                 <div className="gallery-hint">
-                  <i className="fas fa-hand-pointer"></i> Click image
+                  <i className="fas fa-hand-pointer"></i> Klik gambar
                 </div>
               </div>
             </div>

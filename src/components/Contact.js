@@ -30,9 +30,9 @@ const Contact = () => {
           viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title">Let's Collaborate</h2>
+          <h2 className="section-title">Mari Berkolaborasi</h2>
           <p className="section-subtitle mx-auto">
-            Interested in working together or have a question? Feel free to reach out through the platforms below.
+            Tertarik untuk bekerja sama atau ada pertanyaan? Jangan ragu untuk menghubungi saya melalui platform di bawah ini.
           </p>
         </motion.div>
 
@@ -55,7 +55,7 @@ const Contact = () => {
             </div>
             <h3>Email</h3>
             <p>nisasalsabila23050505@gmail.com</p>
-            <span className="contact-action">Send Message <i className="fas fa-arrow-right"></i></span>
+            <span className="contact-action">Kirim Pesan <i className="fas fa-arrow-right"></i></span>
           </motion.a>
 
           <motion.a 
@@ -72,7 +72,7 @@ const Contact = () => {
             </div>
             <h3>WhatsApp</h3>
             <p>+62 851-9471-3488</p>
-            <span className="contact-action">Chat Now <i className="fas fa-arrow-right"></i></span>
+            <span className="contact-action">Chat Sekarang <i className="fas fa-arrow-right"></i></span>
           </motion.a>
 
           <motion.div 
@@ -82,8 +82,8 @@ const Contact = () => {
             <div className="contact-icon map">
               <i className="fas fa-map-marker-alt"></i>
             </div>
-            <h3>Location</h3>
-            <p>Padang City, West Sumatera</p>
+            <h3>Lokasi</h3>
+            <p>Kota Padang, Sumatera Barat</p>
             <span className="contact-action">Indonesia</span>
           </motion.div>
         </motion.div>

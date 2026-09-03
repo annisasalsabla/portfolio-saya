@@ -6,15 +6,15 @@ const Certificates = () => {
   const [selectedCert, setSelectedCert] = useState(null);
 
   const certData = [
-    { id: 9, img: '/images/sertifikatmagang.png', title: 'Internship / Field Work Certificate', issuer: 'PT Rapier Technology International', date: 'February 2026 – May 2026' },
-    { id: 1, img: '/images/s8.png', title: 'AWS Academy Graduate – Cloud Foundations', issuer: 'AWS Academy', date: 'June 2025 – June 2028' },
-    { id: 2, img: '/images/s6.png', title: 'Red Hat System Administration I (RH124)', issuer: 'Red Hat', date: 'July 2024 – July 2028' },
-    { id: 3, img: '/images/s5.png', title: 'NDG Linux Essentials', issuer: 'Cisco Networking Academy', date: 'June 30, 2024' },
-    { id: 4, img: '/images/s3.png', title: 'Database Foundations', issuer: 'Oracle Academy', date: 'July 6, 2024' },
-    { id: 5, img: '/images/s1.png', title: 'Database Programming with SQL', issuer: 'Oracle Academy', date: 'July 7, 2024' },
-    { id: 6, img: '/images/s4.png', title: 'Java Programming', issuer: 'Oracle Academy', date: 'June 13, 2024' },
-    { id: 7, img: '/images/s2.png', title: 'Java Fundamentals', issuer: 'Oracle Academy', date: 'April 16, 2024' },
-    { id: 8, img: '/images/s7.png', title: 'Poster Design Competition Participant', issuer: 'UKM Cybertech PNP', date: 'April 28 – May 2, 2025' }
+    { id: 9, img: '/images/sertifikatmagang.png', title: 'Sertifikat Magang / Praktik Kerja Lapangan', issuer: 'PT Rapier Technology International', date: 'Februari 2026 – Mei 2026' },
+    { id: 1, img: '/images/s8.png', title: 'AWS Academy Graduate – Cloud Foundations', issuer: 'AWS Academy', date: 'Juni 2025 – Juni 2028' },
+    { id: 2, img: '/images/s6.png', title: 'Red Hat System Administration I (RH124)', issuer: 'Red Hat', date: 'Juli 2024 – Juli 2028' },
+    { id: 3, img: '/images/s5.png', title: 'NDG Linux Essentials', issuer: 'Cisco Networking Academy', date: '30 Juni 2024' },
+    { id: 4, img: '/images/s3.png', title: 'Database Foundations', issuer: 'Oracle Academy', date: '6 Juli 2024' },
+    { id: 5, img: '/images/s1.png', title: 'Database Programming with SQL', issuer: 'Oracle Academy', date: '7 Juli 2024' },
+    { id: 6, img: '/images/s4.png', title: 'Java Programming', issuer: 'Oracle Academy', date: '13 Juni 2024' },
+    { id: 7, img: '/images/s2.png', title: 'Java Fundamentals', issuer: 'Oracle Academy', date: '16 April 2024' },
+    { id: 8, img: '/images/s7.png', title: 'Peserta Lomba Desain Poster', issuer: 'UKM Cybertech PNP', date: '28 April – 2 Mei 2025' }
   ];
 
   return (
@@ -27,8 +27,8 @@ const Certificates = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title">Certificates &amp; Training</h2>
-          <p className="section-subtitle">Recognition of my competencies and active commitment to self-development.</p>
+          <h2 className="section-title">Sertifikat &amp; Pelatihan</h2>
+          <p className="section-subtitle">Pengakuan atas kompetensi dan keaktifan saya dalam mengembangkan diri.</p>
         </motion.div>
 
         <div className="certs-grid">
@@ -85,8 +85,8 @@ const Certificates = () => {
                 <img src={selectedCert.img} alt={selectedCert.title} />
                 <div className="modal-details">
                   <h3>{selectedCert.title}</h3>
-                  <p><strong>Issuer:</strong> {selectedCert.issuer}</p>
-                  <p><strong>Date:</strong> {selectedCert.date}</p>
+                  <p><strong>Penerbit:</strong> {selectedCert.issuer}</p>
+                  <p><strong>Tanggal:</strong> {selectedCert.date}</p>
                 </div>
               </div>
             </motion.div>
