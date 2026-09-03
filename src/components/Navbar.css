@@ -4,9 +4,12 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: all var(--transition-normal);
+  transition: padding var(--transition-normal), background-color var(--transition-normal), box-shadow var(--transition-normal);
   padding: var(--space-4) 0;
   background-color: transparent;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .navbar.glass {

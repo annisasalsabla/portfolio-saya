@@ -77,6 +77,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; /* Offset for sticky navbar */
+  -webkit-overflow-scrolling: touch;
+  over-scroll-behavior-y: none;
 }
 
 body {
@@ -86,6 +88,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -230,6 +234,8 @@ img {
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 /* Accessibility: Reduced Motion */

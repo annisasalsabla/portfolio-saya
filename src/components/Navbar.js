@@ -34,17 +34,27 @@ const Navbar = () => {
     document.documentElement.setAttribute('data-theme', next);
   };
 
-  /* Scroll tracking */
+  /* Scroll tracking with requestAnimationFrame throttling */
   useEffect(() => {
+    let ticking = false;
     const onScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-      const pos = window.scrollY + 100;
-      for (let i = navLinks.length - 1; i >= 0; i--) {
-        const el = document.getElementById(navLinks[i].id);
-        if (el && el.offsetTop <= pos) { setActiveSection(navLinks[i].id); break; }
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50);
+          const pos = window.scrollY + 100;
+          for (let i = navLinks.length - 1; i >= 0; i--) {
+            const el = document.getElementById(navLinks[i].id);
+            if (el && el.offsetTop <= pos) {
+              setActiveSection(navLinks[i].id);
+              break;
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-    window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
