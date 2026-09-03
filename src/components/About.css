@@ -112,6 +112,49 @@
   margin-bottom: var(--space-4);
 }
 
+/* ── Education Badge ── */
+.education-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(var(--accent-secondary-rgb, 27,58,43), 0.08), rgba(var(--accent-secondary-rgb, 27,58,43), 0.04));
+  border: 1.5px solid rgba(var(--accent-secondary-rgb, 27,58,43), 0.2);
+  border-left: 4px solid var(--accent-secondary);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.2rem;
+  margin-bottom: var(--space-4);
+}
+
+[data-theme="dark"] .education-badge {
+  background: linear-gradient(135deg, rgba(45,212,191,0.07), rgba(45,212,191,0.03));
+  border-color: rgba(45,212,191,0.25);
+  border-left-color: var(--accent-secondary);
+}
+
+.edu-icon {
+  font-size: 1.5rem;
+  color: var(--accent-secondary);
+  flex-shrink: 0;
+}
+
+.edu-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.edu-degree {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.edu-school {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
 .resume-prompt {
   font-size: 1.1rem;
   font-weight: 500;
@@ -189,27 +232,32 @@
   .about-headline {
     border-right: none;
     padding-right: 0;
-    font-size: 2rem; /* Smaller font on mobile */
+    font-size: 2rem;
   }
   
   .about-profile-row {
     flex-direction: column;
-    align-items: center; /* Center align on mobile */
+    align-items: center;
     text-align: center;
     gap: var(--space-4);
   }
   
   .profile-name-row {
-    justify-content: center; /* Center name row */
+    justify-content: center;
   }
   
   .profile-stats {
-    justify-content: center; /* Center stats */
+    justify-content: center;
     gap: var(--space-4);
   }
 
+  /* On mobile keep paragraphs justified, not centered */
   .about-text-content {
-    text-align: center; /* Center text on mobile */
+    text-align: justify;
+  }
+
+  .education-badge {
+    flex-wrap: wrap;
   }
 
   .currently-label {

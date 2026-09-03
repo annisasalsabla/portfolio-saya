@@ -70,8 +70,34 @@ const About = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
+          {/* Education badge */}
+          <div className="education-badge">
+            <i className="fas fa-graduation-cap edu-icon"></i>
+            <div className="edu-info">
+              <span className="edu-degree">D3 — Informatics Management</span>
+              <span className="edu-school">Politeknik Negeri Padang &nbsp;·&nbsp; 2023 – 2026</span>
+            </div>
+          </div>
+
           <p>
-            D3 graduate in Information Technology from Politeknik Negeri Padang with a strong interest in IT. I have hands-on experience in IT, particularly in web and mobile application development. Skilled in end-to-end project delivery using Laravel, React, Flutter, and other programming languages — from database design to system integration. I am highly curious, quick to adapt to new technologies, and ready to contribute enthusiastically to any IT team.
+            I am Annisa Salsabila, a fresh graduate in Informatics Management from Politeknik Negeri Padang. 
+            Throughout my studies, I developed a genuine passion for building software — not just as an academic exercise, 
+            but as a way to solve real problems. My focus has been on web and mobile development, 
+            working across the full stack from database architecture to frontend interfaces.
+          </p>
+          <p>
+            I am comfortable working with frameworks like Laravel and React for web systems, 
+            and Flutter for cross-platform mobile applications. During my time as a student, 
+            I had the opportunity to build end-to-end projects — including an inventory and 
+            sales management system, a hospital queue system, and a geographic information system 
+            for tourism — all developed to address real-world use cases, not just classroom assignments.
+          </p>
+          <p>
+            My internship at PT Rapier Technology International gave me hands-on exposure to 
+            professional software development. I contributed to building REST APIs for a POS system, 
+            collaborating with a cross-functional team of developers, business analysts, and QA engineers. 
+            That experience sharpened my understanding of clean architecture, API design, and how 
+            software teams operate in a real production environment.
           </p>
           <p className="resume-prompt">
             Want to know more about my experience? <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="resume-link">Download my CV</a>
