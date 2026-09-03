@@ -264,3 +264,40 @@ img {
     padding: 0 1.25rem;
   }
 }
+
+/* ===== JUSTIFY TEXT — all descriptive paragraphs ===== */
+/* Target every <p> inside a section for consistent, clean justified layout */
+.section p,
+.about-text-content p,
+.education-text,
+.timeline-desc,
+.project-desc,
+.modal-desc,
+.section-subtitle,
+.hero-greeting,
+.resume-prompt {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  word-break: break-word;
+}
+
+/* Keep headings, labels, nav, buttons left/center-aligned as designed */
+h1, h2, h3, h4, h5, h6,
+.hero-title,
+.hero-subtitle,
+.section-title,
+.btn,
+.nav-link,
+.badge,
+.stat-label,
+.stat-value,
+.currently-title,
+.currently-desc,
+.about-label,
+.currently-label,
+.contact-action,
+.cert-date {
+  text-align: inherit; /* don't override these */
+}
+
